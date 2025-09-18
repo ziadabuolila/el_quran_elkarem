@@ -811,10 +811,10 @@ th {
     max-width: 1200px;
     margin: auto;
     background-color: #fff;
-    padding: 30px;
+    padding: 15px;
     margin-top: 107px;
     border-radius: 20px;
-    max-height: 120px;
+    max-height: 100px;
     overflow: hidden;
     transition: max-height 0.5s ease;
     cursor: pointer;
