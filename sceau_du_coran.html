@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ختمه القرءان</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/El_Quran_Elkarem_logo.jpg" alt="القرآن الكريم" draggable="false">
+                <h1>القرآن الكريم</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            الصفحة الرئيسية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="indice.html">
+                            فهرس السور
+                        </a>
+                    </li>
+                    <li>
+                        <a href="music.html">
+                            التلاوات الصوتية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sceau_du_coran.html">
+                            ختمه القرءان
+                        </a>
+                    </li>
+                    <li>
+                        <a href="supplications_et_souvenirs.html">
+                            ادعيه و اذكار
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chapelet.html">
+                            السبحة
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-btn">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+        <div class="menu-header">
+            <div class="logo"><i class="fa-solid fa-book-quran"></i> موقعي</div>
+            <div class="close-btn" id="closeBtn"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+        <ul>
+            <a href="index.html">
+                <li>
+                    <i class="fa-solid fa-house"></i>
+                    <span>الصفحة الرئيسية</span>
+                </li>
+            </a>
+            <a href="indice.html">
+                <li>
+                    <i class="fa-solid fa-list"></i>
+                    <span>فهرس السور</span>
+                </li>
+            </a>
+            <a href="music.html">
+                <li>
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>التلاوات الصوتية</span>
+                </li>
+            </a>
+            <a href="sceau_du_coran.html">
+                <li>
+                    <i class="fa-solid fa-mosque"></i>
+                    <span>ختمه القرآن</span>
+                </li>
+            </a>
+            <a href="supplications_et_souvenirs.html">
+                <li>
+                    <i class="fa-solid fa-hands-praying"></i>
+                    <span>أدعية وأذكار</span>
+                </li>
+            </a>
+            <a href="chapelet.html">
+                <li>
+                    <i class="fa-solid fa-hands-praying"></i>
+                    <span>السبحة</span>
+                </li>
+            </a>
+        </ul>
+    </div>
+    <div class="container_sceau">
+        <label for="days">اختر مدة الختمة:</label>
+        <br>
+        <div class="top_sceau">
+            <select id="days">
+                <option value="" selected disabled>-- اختر المدة --</option>
+                <option value="10">10 أيام</option>
+                <option value="15">15 يوم</option>
+                <option value="30">30 يوم</option>
+                <option value="60">60 يوم</option>
+            </select>
+            <button onclick="generatePlan()">ابدأ ختمتك</button>
+        </div>
+        <div id="plan"></div>
+        <div class="progress-container" id="progressContainer">
+            <h3>نسبة التقدم:</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p id="progressText">0%</p>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
