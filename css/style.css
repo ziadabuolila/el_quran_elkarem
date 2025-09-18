@@ -865,8 +865,8 @@ th {
 .card {
     background: #f4f4f4;
     border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    padding: 18px 10px 18px 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 10px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
