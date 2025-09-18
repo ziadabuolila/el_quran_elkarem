@@ -101,6 +101,109 @@
             </a>
         </ul>
     </div>
+    <div class="tasbeehType">
+        <div class="sebha">
+            <div class="zekr" id="zekr">سبحان الله</div>
+            <div id="inputArea">
+                <input type="number" id="countInput" placeholder="اكتب عدد مرات التسبيح">
+                <div class="btns_sebha">
+                    <button class="btn-tasbeeh tasbeeh_sebha" onclick="activateSebha()">تفعيل</button>
+                    <button class="btn-next tasbeeh_sebha" onclick="nextZekr()">الذكر التالي</button>
+                </div>
+            </div>
+            <div id="tasbeehArea" style="display:none;">
+                <div class="count" id="count">0</div>
+                <div class="btns_sebha">
+                    <button class="btn-tasbeeh tasbeeh_sebha" onclick="tasbeeh()">تسبيح</button>
+                    <button class="btn-reset tasbeeh_sebha" onclick="resetCount()">إعادة</button>
+                </div>
+            </div>
+            <div id="limitMessage" style="display:none; color:red; font-weight:bold; margin-top:15px;"></div>
+        </div>
+    </div>
+    <script>
+        const azkar = [
+            "سبحان الله",
+            "سبحان الله و بحمده",
+            "سبحان الله و الحمد لله",
+            "سبحان الله العظيم و بحمده",
+            "سبحان الله و بحمده , سبحان الله العظيم",
+            "لا إله إلا الله , له الملك و له الحمد و هو علي كل شئ قدير",
+            "لا حول و لا قوة إلا بالله",
+            "الحمدلله رب العالمين",
+            "اللهم صلي وسلم و بارك علي سيدنا محمد",
+            "استغفر الله",
+            "سبحان الله ,والحمدلله , ولا إله إلا الله , والله و اكبر",
+            "لا إله إلا الله",
+            "الله و اكبر",
+            "سبحان الله , والحمدلله , ولا إله إلا الله , والله اكبر , اللهم اغفر لي , اللهم ارحمني , اللهم ارزقني",
+            "الحمدلله لله حمدا كثيرا طيبامباركا فيه",
+            "الله اكبر كبيرا , والحمدلله كثيرا , وسبحان الله بكرة و اصيلا",
+            "اللهم صلي ي محمد و علي ال محمد كما صليت علي ابراهيم , و علي ال ابراهيم إنك حميد مجيد , اللهم بارك علي محمد و علي ال محمد كما باركت علي ابراهيم و علي ال ابراهيم إنك حميد مجيد",
+            "لا إله إلا انت سبحانك أني كنت من الظالمين"
+        ];
+
+        let currentIndex = 0;
+        let count = 0;
+        let maxCount = 0;
+
+        const zekrEl = document.getElementById("zekr");
+        const countEl = document.getElementById("count");
+        const inputArea = document.getElementById("inputArea");
+        const tasbeehArea = document.getElementById("tasbeehArea");
+        const limitMessage = document.getElementById("limitMessage");
+        const countInput = document.getElementById("countInput");
+
+        function activateSebha() {
+            maxCount = parseInt(countInput.value);
+            if (!maxCount || maxCount <= 0) {
+                alert("من فضلك أدخل عدد صحيح أكبر من صفر");
+                return;
+            }
+            localStorage.setItem("tasbeehLimit", maxCount);
+            inputArea.style.display = "none";
+            tasbeehArea.style.display = "block";
+            count = 0;
+            countEl.textContent = count;
+        }
+
+        function tasbeeh() {
+            if (count < maxCount) {
+                count++;
+                countEl.textContent = count;
+                countEl.style.transform = "scale(0.8)";
+                setTimeout(() => countEl.style.transform = "scale(1)", 150);
+
+                if (count === maxCount) {
+                    showLimitMessage();
+                }
+            }
+        }
+
+        function nextZekr() {
+            currentIndex = (currentIndex + 1) % azkar.length;
+            zekrEl.textContent = azkar[currentIndex];
+            count = 0;
+            countEl.textContent = count;
+        }
+
+        function resetCount() {
+            count = 0;
+            countEl.textContent = count;
+        }
+
+        function showLimitMessage() {
+            limitMessage.textContent = "لقد وصلت الي الحد الاقصي من عدد مرات هذا التسبيح";
+            limitMessage.style.display = "block";
+
+            setTimeout(() => {
+                limitMessage.style.display = "none";
+                tasbeehArea.style.display = "none";
+                inputArea.style.display = "block";
+                countInput.value = "";
+            }, 5000);
+        }
+    </script>
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/all.min.js"></script>

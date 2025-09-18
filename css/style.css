@@ -698,7 +698,7 @@ label {
     color: #2e8b57;
 }
 
-select {
+#days {
     padding: 8px 11px;
     font-size: 16px;
     border-radius: 12px;
@@ -939,4 +939,95 @@ th {
     .supplications_souvenirs {
         flex-direction: column !important;
     }
+}
+
+
+/* ----- */
+
+.tasbeehType {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px;
+}
+
+.sebha {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    max-width: 390px;
+    width: 95%;
+    animation: fadeIn 1s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.zekr {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f1c40f;
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.9);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #114b5f;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.count {
+    font-size: 52px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+}
+
+.btns_sebha {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tasbeeh_sebha {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 90px;
+    color: white;
+}
+
+.btn-tasbeeh {
+    background-color: #379437;
+}
+
+.btn-tasbeeh:hover {
+    background-color: #2a6e2a;
+}
+
+.btn-next {
+    background-color: #aaaa47;
+}
+
+.btn-next:hover {
+    background-color: #70702e;
+}
+
+.btn-reset {
+    background-color: #c33b3b;
+}
+
+.btn-reset:hover {
+    background-color: #862b2b;
 }
