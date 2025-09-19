@@ -784,6 +784,30 @@
             </div>
         </a>
     </div>
+    <button id="scrollTopBtn" title="العودة للأعلى">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <script>
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (
+                document.body.scrollTop > 100 ||
+                document.documentElement.scrollTop > 100
+            ) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+    </script>
     <script>
         const searchInput = document.getElementById("search");
         const quranList = document.getElementById("quranList");

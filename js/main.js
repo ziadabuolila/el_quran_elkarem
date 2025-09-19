@@ -170,4 +170,3 @@ function setupToggle(containerId, btnId) {
 }
 
 setupToggle("supplications");
-setupToggle("souvenirs");

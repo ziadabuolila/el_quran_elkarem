@@ -622,18 +622,20 @@ footer {
     right: 20px;
     z-index: 1000;
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
     outline: none;
-    border-radius: 50%;
-    font-size: 24px;
+    border-radius: 10px;
+    font-size: 20px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.3s;
+    width: 45px;
+    height: 45px;
+    padding: 0;
 }
 
 #scrollTopBtn:hover {
-    background-color: #0056b3;
+    background-color: #114b5f;
 }
 
 .btns {
@@ -660,7 +662,7 @@ footer {
 
 @media (max-width: 375px) {
     .btn {
-        font-size: 11 px !important;
+        font-size: 11px !important;
     }
 }
 
@@ -972,7 +974,7 @@ th {
     text-shadow: 0 0 10px rgba(241, 196, 15, 0.9);
 }
 
-input {
+#countInput {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -1030,4 +1032,118 @@ input {
 
 .btn-reset:hover {
     background-color: #862b2b;
+}
+
+
+/* ---- music ---- */
+
+.images-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 140px;
+}
+
+.images-container a {
+    background-color: #fff;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 17px;
+}
+
+.images-container img {
+    width: 250px;
+    border-radius: 22px;
+}
+
+.images-container p {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.card_audio {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 700px;
+    max-width: 95%;
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-text {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.card-text h3 {
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+}
+
+.card-text h2 {
+    font-size: 22px;
+    margin: 8px 0;
+    color: #111;
+}
+
+.card-text p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.card-text .btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #1e2330;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background 0.3s ease;
+}
+
+.card-text .btn:hover {
+    background: #2d3447;
+}
+
+.card-img img {
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+audio {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.audio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 0 40px 0;
+}
+
+@media (max-width: 600px) {
+    .card-content {
+        flex-direction: column-reverse !important;
+    }
 }
