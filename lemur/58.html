@@ -122,11 +122,24 @@
         </div>
       </div>
     </div>
+    <div class="custom">
+      <input
+        type="number"
+        id="searchInput"
+        class="input-custom"
+        placeholder="اكتب رقم الآية اللتي تم الوقوف عليها"
+      />
+      <button id="saveBtn" class="btn-custom">حفظ</button>
+      <button type="reset" id="clearBtn" class="btn-custom btn-clear">
+        مسح
+      </button>
+    </div>
+    <div id="message" class="message"></div>
     <div class="quran">
       <div class="quran-wrapper">
         <h1 class="sura-title">سورة المجادلة</h1>
         <div class="bismillah_up">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</div>
-        <div class="ayah">
+        <div class="ayah" id="ayah">
           قَدۡ سَمِعَ ٱللَّهُ قَوۡلَ ٱلَّتِي تُجَٰدِلُكَ فِي زَوۡجِهَا
           وَتَشۡتَكِيٓ إِلَى ٱللَّهِ وَٱللَّهُ يَسۡمَعُ تَحَاوُرَكُمَآۚ إِنَّ
           ٱللَّهَ سَمِيعُۢ بَصِيرٌ (1) ٱلَّذِينَ يُظَٰهِرُونَ مِنكُم مِّن
@@ -254,6 +267,52 @@
             window.location.href = "59.html";
           }, 80);
         });
+      });
+    </script>
+    <script>
+      const input = document.getElementById("searchInput");
+      const saveBtn = document.getElementById("saveBtn");
+      const clearBtn = document.getElementById("clearBtn");
+      const ayahDiv = document.getElementById("ayah");
+      const message = document.getElementById("message");
+
+      function highlightNumber(num) {
+        let text = ayahDiv.textContent;
+        let found = false;
+        ayahDiv.innerHTML = text.replace(/\(\d+\)/g, (match) => {
+          let number = match.replace(/[()]/g, "");
+          if (number == num) {
+            found = true;
+            return `<span class="highlight">(${number})</span>`;
+          }
+          return `(${number})`;
+        });
+        return found;
+      }
+      saveBtn.addEventListener("click", () => {
+        let value = input.value.trim();
+        if (value) {
+          let found = highlightNumber(value);
+          if (found) {
+            localStorage.setItem("highlightedNumber", value);
+            message.textContent = "";
+          } else {
+            message.textContent = `لا يوجد رقم (${value})`;
+            localStorage.removeItem("highlightedNumber");
+          }
+        }
+      });
+      clearBtn.addEventListener("click", () => {
+        localStorage.removeItem("highlightedNumber");
+        ayahDiv.innerHTML = ayahDiv.textContent;
+        message.textContent = "";
+        input.value = "";
+      });
+      window.addEventListener("DOMContentLoaded", () => {
+        let savedNum = localStorage.getItem("highlightedNumber");
+        if (savedNum) {
+          highlightNumber(savedNum);
+        }
       });
     </script>
     <script src="../js/jquery-3.7.0.min.js"></script>

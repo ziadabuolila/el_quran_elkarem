@@ -1147,3 +1147,60 @@ audio {
         flex-direction: column-reverse !important;
     }
 }
+
+.custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 0 0;
+    gap: 12px;
+}
+
+.input-custom {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    max-width: 275px;
+    width: 50%;
+}
+
+.btn-custom {
+    padding: 8px 15px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+.btn-clear {
+    background-color: #dc3545;
+}
+
+.btn-clear:hover {
+    background-color: #a71d2a;
+}
+
+.highlight {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
