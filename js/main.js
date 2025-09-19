@@ -143,30 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-function setupToggle(containerId, btnId) {
-    const container = document.getElementById(containerId);
-    const header = container.querySelector(".header_supplications");
-    const title = container.querySelector(".name");
-    const toggleBtn = document.getElementById(btnId);
-
-    function toggleContainer() {
-        container.classList.toggle("open");
-        toggleBtn.textContent = container.classList.contains("open") ? "-" : "+";
-    }
-
-    [container, header, title, toggleBtn].forEach(el => {
-        el.addEventListener("click", (e) => {
-            if (
-                e.target === container ||
-                e.target === header ||
-                e.target === title ||
-                e.target === toggleBtn
-            ) {
-                toggleContainer();
-            }
-        });
-    });
-}
-
-setupToggle("supplications");
+window.addEventListener("load", function() {
+    document.getElementById("loading").style.display = "none";
+    document.body.classList.remove("loading");
+});
