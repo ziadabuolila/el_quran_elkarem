@@ -1246,3 +1246,109 @@ audio {
     align-items: center;
     justify-content: center;
 }
+
+
+/* ------ */
+
+.raqiyeh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.raqiyeh-container {
+    background: #ffffffcc;
+    padding: 40px 50px;
+    border-radius: 25px;
+    max-width: 800px;
+    width: 97%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.raqiyeh-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0a3d62;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1b4f72;
+    margin: 25px 0 40px 0;
+    position: relative;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 4px;
+    background: #1b4f72;
+    border-radius: 2px;
+}
+
+.text-base {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.ayat {
+    background: #f0f4f8;
+    border-right: 5px solid #0a3d62;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.duaa {
+    background: #e8f5e9;
+    border-right: 5px solid #2e7d32;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width:600px) {
+    .raqiyeh-container {
+        padding: 20px 25px;
+    }
+    .raqiyeh-title {
+        font-size: 26px;
+    }
+    .section-title {
+        font-size: 20px;
+    }
+    .text-base {
+        font-size: 16px;
+    }
+}
+
+.three {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.left_ayat {
+    text-align: left;
+    color: #ff0000;
+}

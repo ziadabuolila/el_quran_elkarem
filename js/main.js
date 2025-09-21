@@ -146,3 +146,15 @@ window.addEventListener("load", function() {
     document.getElementById("loading").style.display = "none";
     document.body.classList.remove("loading");
 });
+
+
+// --- 
+const items = document.querySelectorAll('.text-base');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+items.forEach(item => observer.observe(item));
