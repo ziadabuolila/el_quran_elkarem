@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>فضل سورة الكهف</title>
+  </head>
+
+  <body>
+    <style>
+      .container_hadith_section {
+        margin: 0 10px 0 10px;
+      }
+      .hadith-section {
+        background: #f7fbff;
+        padding: 20px 20px;
+        border-radius: 25px;
+        max-width: 786px;
+        margin: 105px auto;
+        font-family: "Cairo", sans-serif;
+        color: #114b5f;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        width: 100%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        color: #114b5f;
+      }
+
+      .intro-text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #8b8b8b;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .hadiths {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .hadith {
+        background: #fff;
+        padding: 10px;
+        border-radius: 18px;
+        position: relative;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s;
+      }
+
+      .hadith:hover {
+        transform: translateY(-6px);
+      }
+
+      .quote-icon {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        font-size: 20px;
+        color: #114b5f;
+      }
+
+      .hadith p {
+        font-size: 15px;
+        line-height: 1.9;
+        color: #114b5f;
+        margin: 0;
+      }
+
+      .source {
+        display: block;
+        margin-top: 8px;
+        font-size: 13px;
+        color: #8b8b8b;
+        font-style: italic;
+      }
+
+      .conclusion {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #114b5f;
+      }
+    </style>
+    <!-- ----- style loadet page ----- -->
+    <style>
+      #loaderOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .loader_book {
+        width: 200px;
+        height: 200px;
+        perspective: 200px;
+        position: relative;
+      }
+
+      .dot_book {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        margin-top: -60px;
+        margin-left: -60px;
+        border-radius: 100px;
+        border: 40px outset #1e3f57;
+        transform-origin: 50% 50%;
+        transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+        background-color: transparent;
+        animation: dot1 1000ms cubic-bezier(0.49, 0.06, 0.43, 0.85) infinite;
+      }
+
+      .dot_book:nth-child(2) {
+        width: 140px;
+        height: 140px;
+        margin-top: -70px;
+        margin-left: -70px;
+        border-width: 30px;
+        border-color: #447891;
+        animation-name: dot2;
+        animation-delay: 75ms;
+        box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+      }
+
+      .dot_book:nth-child(3) {
+        width: 160px;
+        height: 160px;
+        margin-top: -80px;
+        margin-left: -80px;
+        border-width: 20px;
+        border-color: #6bb2cd;
+        animation-name: dot3;
+        animation-delay: 150ms;
+        box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+      }
+
+      @keyframes dot1 {
+        0% {
+          border-color: #1e3f57;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+        50% {
+          border-color: #1e574f;
+          transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg)
+            translateZ(0px);
+        }
+        100% {
+          border-color: #1e3f57;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+      }
+
+      @keyframes dot2 {
+        0% {
+          border-color: #447891;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+        50% {
+          border-color: #449180;
+          transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg)
+            translateZ(0px);
+        }
+        100% {
+          border-color: #447891;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+      }
+
+      @keyframes dot3 {
+        0% {
+          border-color: #6bb2cd;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+        50% {
+          border-color: #6bcdb2;
+          transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg)
+            translateZ(0px);
+        }
+        100% {
+          border-color: #6bb2cd;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+      }
+    </style>
+    <div id="loaderOverlay">
+      <div class="loader_book">
+        <div class="dot_book"></div>
+        <div class="dot_book"></div>
+        <div class="dot_book"></div>
+      </div>
+    </div>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html" class="active"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html" id="active">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="container_hadith_section">
+      <section class="hadith-section">
+        <div class="container">
+          <h1 class="section-title">فضل سورة الكهف</h1>
+
+          <p class="intro-text">
+            الحمد لله، والصلاة والسلام على رسول الله، وعلى آله وصحبه، أما بعد:
+          </p>
+
+          <div class="hadiths">
+            <div class="hadith">
+              <p>
+                من حفظ عشر آيات من أول سورة الكهف، عصم من فتنة الدجال.
+                <span class="source"
+                  >- أحمد، مسلم، أبو داود، الترمذي، النسائي</span
+                >
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                من قرأ العشر الأواخر من سورة الكهف، عصم من فتنة الدجال.
+                <span class="source">- أحمد، مسلم، النسائي، ابن حبان</span>
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                قرأ رجل سورة الكهف، وفي الدار دابة، فجعلت تنفر، فنظر، فإذا ضبابة
+                أو سحابة قد غشيته، فذكر ذلك للنبي ﷺ، فقال: اقرأ فلان، فإن
+                السكينة نزلت للقرآن.
+                <span class="source">- البخاري، مسلم، الطبراني</span>
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                من قرأ ثلاث آيات من أول سورة الكهف، عصم من فتنة الدجال.
+                <span class="source">- الترمذي</span>
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                من قرأ الكهف يوم الجمعة، فهو معصوم إلى ثمانية أيام من كل فتنة
+                تكون. <span class="source">- ابن مردويه، الضياء</span>
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                من قرأ سورة الكهف، كانت له نورًا من مقامه إلى مكة، ومن قرأ عشر
+                آيات من آخرها، ثم خرج الدجال، لم يضره.
+                <span class="source"
+                  >- الطبراني، الحاكم، ابن مردويه، البيهقي</span
+                >
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                من قرأ سورة الكهف في يوم الجمعة، أضاء له من النور ما بين
+                الجمعتين.
+                <span class="source">- الحاكم، البيهقي</span>
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                من قرأ سورة الكهف في يوم الجمعة، سطع له نور من تحت قدمه إلى عنان
+                السماء، وغفر له ما بين الجمعتين.
+                <span class="source">- ابن مردويه عن ابن عمر</span>
+              </p>
+            </div>
+
+            <div class="hadith">
+              <p>
+                البيت الذي تقرأ فيه سورة الكهف، لا يدخله شيطان تلك الليلة.
+                <span class="source">- عبد الله بن مغفل</span>
+              </p>
+            </div>
+          </div>
+
+          <p class="conclusion">والله أعلم.</p>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          const loader = document.getElementById("loaderOverlay");
+          loader.style.display = "none";
+          document.getElementById("mainContent").style.display = "block";
+        }, 3000);
+      });
+    </script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

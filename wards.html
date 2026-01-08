@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>الورد اليومي</title>
+  </head>
+
+  <body>
+    <style>
+      .ward-container {
+        max-width: 950px;
+        margin: 70px auto;
+        padding: 20px;
+        font-family: Cairo, sans-serif;
+      }
+
+      .ward-title,
+      .ward-subtitle {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #fff;
+      }
+
+      .ward-card {
+        background: #f9fafb;
+        border-radius: 18px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      .ward-card label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      .ward-card input,
+      .ward-card select {
+        width: 100%;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid #d1d5db;
+        margin-bottom: 18px;
+        font-size: 15px;
+        background: #fff;
+        transition: 0.3s;
+      }
+
+      .ward-card input:focus,
+      .ward-card select:focus {
+        outline: none;
+        border-color: #2563eb;
+        background: #fff;
+      }
+      .btns-wards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+      }
+      @media (max-width: 640px) {
+        .btns-wards {
+          flex-direction: column;
+        }
+      }
+      .ward-card button {
+        padding: 14px;
+        border-radius: 14px;
+        border: none;
+        background: linear-gradient(to left, #114b5f, #8b8b8b);
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+        box-shadow: 10px 10px 0 #34768b;
+        max-width: 300px;
+      }
+
+      .ward-card button:hover {
+        box-shadow: 6px 6px 0 #34768b;
+        transform: translateY(-2px);
+      }
+
+      .ward-card button:active {
+        box-shadow: none;
+        transform: translateY(0);
+      }
+
+      .ward-card.ward-info p {
+        font-size: 15px;
+        margin: 10px 0;
+      }
+
+      .ward-progress {
+        width: 100%;
+        height: 14px;
+        border-radius: 10px;
+        margin: 15px 0;
+      }
+
+      .ward-progress::-webkit-progress-bar {
+        background: #e5e7eb;
+        border-radius: 10px;
+      }
+
+      .ward-progress::-webkit-progress-value {
+        background: linear-gradient(90deg, #22c55e, #16a34a);
+        border-radius: 10px;
+      }
+
+      .done-btn {
+        background: linear-gradient(135deg, #16a34a, #15803d);
+      }
+      .ward-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 16px;
+      }
+
+      .ward-table-wrapper::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .ward-table-wrapper::-webkit-scrollbar-track {
+        background: #e5e7eb;
+        border-radius: 10px;
+      }
+
+      .ward-table-wrapper::-webkit-scrollbar-thumb {
+        background: #34768b;
+        border-radius: 10px;
+      }
+
+      .ward-table {
+        width: 100%;
+        min-width: 850px;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      .thead-ward-table {
+        background: #34768b;
+        color: #fff;
+      }
+      td:last-child {
+        white-space: nowrap;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: center;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #f3f4f6;
+      }
+
+      .action-btn {
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: none;
+        background: #34768b;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .action-btn:hover {
+        background: #2d6677;
+      }
+
+      .alert-msg {
+        text-align: center;
+        background: #fef3c7;
+        color: #92400e;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        animation: slideDown 0.5s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .time-input {
+        padding: 6px;
+        border-radius: 6px;
+        border: 1px solid #d1d5db;
+      }
+    </style>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html" class="active"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="ward-container">
+      <h1 class="ward-title">وردك اليومي</h1>
+      <div id="alertContainer"></div>
+
+      <div class="ward-card">
+        <label>السورة</label>
+        <select id="surahSelect">
+          <option value="">— اختر السورة —</option>
+        </select>
+
+        <label>عدد الآيات اليومية</label>
+        <input type="number" id="ayahCount" min="1" placeholder="مثال: 10" />
+
+        <label>التاريخ</label>
+        <input type="date" id="dateInput" />
+
+        <div class="btns-wards">
+          <button onclick="saveWard()">حفظ الورد</button>
+        </div>
+      </div>
+
+      <div class="ward-card ward-info">
+        <p>السورة : <span id="showSurah">—</span></p>
+        <p>الورد اليومي : <span id="showWard">—</span> آية</p>
+        <p>المنجز : <span id="doneAyah">0</span></p>
+
+        <progress
+          id="progress"
+          class="ward-progress"
+          value="0"
+          max="100"
+        ></progress>
+        <div class="btns-wards">
+          <button class="done-btn" onclick="markAyah()">أنهيت آية</button>
+          <button class="done-btn" onclick="resetCurrentWard()">
+            إعادة تعيين الورد
+          </button>
+        </div>
+      </div>
+
+      <h2 class="ward-subtitle">سجل الورد</h2>
+      <div class="ward-table-wrapper">
+        <table class="ward-table">
+          <thead class="thead-ward-table">
+            <tr>
+              <th>التاريخ</th>
+              <th>السورة</th>
+              <th>عدد الآيات</th>
+              <th>المنجز</th>
+              <th>الحالة</th>
+              <th>تحديد وقت التذكير</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="wardTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <button id="scrollTopBtn" title="العودة للأعلى">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <script>
+      const surahSelect = document.getElementById("surahSelect");
+      const ayahInput = document.getElementById("ayahCount");
+      const dateInput = document.getElementById("dateInput");
+      const showSurah = document.getElementById("showSurah");
+      const showWard = document.getElementById("showWard");
+      const doneAyah = document.getElementById("doneAyah");
+      const progress = document.getElementById("progress");
+      const table = document.getElementById("wardTable");
+      const alertContainer = document.getElementById("alertContainer");
+      let notifiedIndexes = [];
+      let currentWardTimer = null;
+      const WARD_TIMEOUT = 5 * 60 * 1000;
+      const suras = [
+        "الفاتحة",
+        "البقرة",
+        "آل عمران",
+        "النساء",
+        "المائدة",
+        "الأنعام",
+        "الأعراف",
+        "الأنفال",
+        "التوبة",
+        "يونس",
+        "هود",
+        "يوسف",
+        "الرعد",
+        "إبراهيم",
+        "الحجر",
+        "النحل",
+        "الإسراء",
+        "الكهف",
+        "مريم",
+        "طه",
+        "الأنبياء",
+        "الحج",
+        "المؤمنون",
+        "النور",
+        "الفرقان",
+        "الشعراء",
+        "النمل",
+        "القصص",
+        "العنكبوت",
+        "الروم",
+        "لقمان",
+        "السجدة",
+        "الأحزاب",
+        "سبأ",
+        "فاطر",
+        "يس",
+        "الصافات",
+        "ص",
+        "الزمر",
+        "غافر",
+        "فصلت",
+        "الشورى",
+        "الزخرف",
+        "الدخان",
+        "الجاثية",
+        "الأحقاف",
+        "محمد",
+        "الفتح",
+        "الحجرات",
+        "ق",
+        "الذاريات",
+        "الطور",
+        "النجم",
+        "القمر",
+        "الرحمن",
+        "الواقعة",
+        "الحديد",
+        "المجادلة",
+        "الحشر",
+        "الممتحنة",
+        "الصف",
+        "الجمعة",
+        "المنافقون",
+        "التغابن",
+        "الطلاق",
+        "التحريم",
+        "الملك",
+        "القلم",
+        "الحاقة",
+        "المعارج",
+        "نوح",
+        "الجن",
+        "المزمل",
+        "المدثر",
+        "القيامة",
+        "الإنسان",
+        "المرسلات",
+        "النبأ",
+        "النازعات",
+        "عبس",
+        "التكوير",
+        "الانفطار",
+        "المطففين",
+        "الانشقاق",
+        "البروج",
+        "الطارق",
+        "الأعلى",
+        "الغاشية",
+        "الفجر",
+        "البلد",
+        "الشمس",
+        "الليل",
+        "الضحى",
+        "الشرح",
+        "التين",
+        "العلق",
+        "القدر",
+        "البينة",
+        "الزلزلة",
+        "العاديات",
+        "القارعة",
+        "التكاثر",
+        "العصر",
+        "الهمزة",
+        "الفيل",
+        "قريش",
+        "الماعون",
+        "الكوثر",
+        "الكافرون",
+        "النصر",
+        "المسد",
+        "الإخلاص",
+        "الفلق",
+        "الناس",
+      ];
+      suras.forEach((sura) => {
+        const option = document.createElement("option");
+        option.value = sura;
+        option.textContent = sura;
+        surahSelect.appendChild(option);
+      });
+      let data = JSON.parse(localStorage.getItem("wardData")) || {
+        surah: "",
+        ward: 0,
+        done: 0,
+        date: "",
+        log: [],
+      };
+      function saveWard() {
+        if (data.ward > data.done) {
+          showAlert("برجاء إنهاء الورد الحالي أولاً !");
+          return;
+        }
+        const surah = surahSelect.value;
+        const ward = Number(ayahInput.value);
+        const date = dateInput.value || new Date().toISOString().split("T")[0];
+        if (!surah || ward <= 0) {
+          showAlert("اختر السورة وعدد الآيات !");
+          return;
+        }
+        data.surah = surah;
+        data.ward = ward;
+        data.done = 0;
+        data.date = date;
+        data.log.push({
+          date: date,
+          surah: surah,
+          ward: ward,
+          done: 0,
+          status: "قيد التنفيذ",
+          reminder: "-",
+        });
+        saveData();
+        updateUI();
+        ayahInput.value = "";
+        dateInput.value = "";
+        surahSelect.value = "";
+        if (currentWardTimer) clearTimeout(currentWardTimer);
+        currentWardTimer = setTimeout(() => {
+          const currentIndex = data.log.length - 1;
+          if (
+            currentIndex >= 0 &&
+            data.log[currentIndex].done < data.log[currentIndex].ward
+          ) {
+            data.done = 0;
+            data.ward = 0;
+            data.surah = "";
+            data.date = "";
+            data.log[currentIndex].done = 0;
+            data.log[currentIndex].status = "لم يكتمل";
+            saveData();
+            showSurah.textContent = "—";
+            showWard.textContent = "—";
+            doneAyah.textContent = "0";
+            progress.value = 0;
+            ayahInput.value = "";
+            dateInput.value = "";
+            surahSelect.value = "";
+            updateUI();
+            showAlert("انتهى وقت الورد الحالي، سيتم إعادة العد من الصفر");
+          }
+        }, WARD_TIMEOUT);
+      }
+      function markAyah() {
+        if (data.done < data.ward && data.log.length > 0) {
+          data.done++;
+          const currentIndex = data.log.length - 1;
+          data.log[currentIndex].done = data.done;
+          if (data.done === data.ward) {
+            data.log[currentIndex].status = "مكتمل";
+            showAlert("تم إنهاء الورد بنجاح");
+            if (currentWardTimer) {
+              clearTimeout(currentWardTimer);
+              currentWardTimer = null;
+            }
+            data.surah = "";
+            data.ward = 0;
+            data.done = 0;
+            data.date = "";
+            saveData();
+            updateUI();
+            setTimeout(() => location.reload(), 1000);
+            return;
+          }
+          saveData();
+          updateUI();
+        }
+      }
+      function resetCurrentWard() {
+        data.surah = "";
+        data.ward = 0;
+        data.done = 0;
+        data.date = "";
+        showSurah.textContent = "-";
+        showWard.textContent = "-";
+        doneAyah.textContent = "0";
+        progress.value = 0;
+        ayahInput.value = "";
+        dateInput.value = "";
+        surahSelect.value = "";
+        showAlert("تم إعادة تعيين الورد الحالي !");
+        saveData();
+        updateUI();
+      }
+      function editTime(index) {
+        const row = document.getElementById(`time-${index}`);
+        row.innerHTML = `
+          <input type="time" class="time-input" id="inputTime-${index}">
+          <button class="action-btn" onclick="saveTime(${index})">حفظ</button>
+        `;
+      }
+      function saveTime(index) {
+        const input = document.getElementById(`inputTime-${index}`);
+        let [hour, minute] = input.value.split(":").map(Number);
+        const ampm = hour >= 12 ? "PM" : "AM";
+        hour = hour % 12 || 12;
+        data.log[index].reminder = `${hour}:${minute
+          .toString()
+          .padStart(2, "0")} ${ampm}`;
+        saveData();
+        updateUI();
+      }
+      function updateUI() {
+        showSurah.textContent = data.surah || "-";
+        showWard.textContent = data.ward || "-";
+        doneAyah.textContent = data.done;
+        progress.value = data.ward ? (data.done / data.ward) * 100 : 0;
+        table.innerHTML = "";
+        data.log.forEach((row, i) => {
+          table.innerHTML += `
+            <tr>
+              <td>${row.date}</td>
+              <td>${row.surah}</td>
+              <td>${row.ward}</td>
+              <td>${row.done}</td>
+              <td>${row.status}</td>
+              <td id="time-${i}">${row.reminder}</td>
+              <td>
+                <button class="action-btn" onclick="editTime(${i})">تعديل</button>
+                <button class="action-btn" onclick="deleteRow(${i})">حذف</button>
+              </td>
+            </tr>
+          `;
+        });
+      }
+      function deleteRow(index) {
+        if (confirm("هل أنت متأكد من حذف هذا الصف ؟")) {
+          data.log.splice(index, 1);
+          saveData();
+          updateUI();
+        }
+      }
+      function saveData() {
+        localStorage.setItem("wardData", JSON.stringify(data));
+      }
+      function showAlert(msg) {
+        const div = document.createElement("div");
+        div.className = "alert-msg";
+        div.textContent = msg;
+        alertContainer.appendChild(div);
+        setTimeout(() => div.remove(), 2500);
+      }
+      function checkWardReminder() {
+        const now = new Date();
+        const today = now.toISOString().split("T")[0];
+        let h = now.getHours();
+        const m = now.getMinutes().toString().padStart(2, "0");
+        const ampm = h >= 12 ? "PM" : "AM";
+        h = h % 12 || 12;
+        const currentTime = `${h}:${m} ${ampm}`;
+        data.log.forEach((row, i) => {
+          if (
+            row.date === today &&
+            row.reminder === currentTime &&
+            !notifiedIndexes.includes(i)
+          ) {
+            showAlert(`حان وقت وردك اليومي — سورة ${row.surah}`);
+            notifiedIndexes.push(i);
+          }
+        });
+      }
+      setInterval(checkWardReminder, 2500);
+      updateUI();
+    </script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

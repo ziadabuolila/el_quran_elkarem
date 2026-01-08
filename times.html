@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>مواقيت الصلاة</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html" class="active"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html" id="active">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="container_times">
+      <h1 class="container_times_h1">مواقيت الصلاة اليوم</h1>
+      <div id="fajr" class="prayer-card_times">
+        <div class="name_time_azan">
+          <span>الفجر</span>
+          <span>--:--</span>
+        </div>
+        <small class="remaining-time">--</small>
+      </div>
+
+      <div id="sunrise" class="prayer-card_times">
+        <div class="name_time_azan">
+          <span>الشروق</span>
+          <span>--:--</span>
+        </div>
+        <small class="remaining-time">--</small>
+      </div>
+
+      <div id="dhuhr" class="prayer-card_times">
+        <div class="name_time_azan">
+          <span>الظهر</span>
+          <span>--:--</span>
+        </div>
+        <small class="remaining-time">--</small>
+      </div>
+
+      <div id="asr" class="prayer-card_times">
+        <div class="name_time_azan">
+          <span>العصر</span>
+          <span>--:--</span>
+        </div>
+        <small class="remaining-time">--</small>
+      </div>
+
+      <div id="maghrib" class="prayer-card_times">
+        <div class="name_time_azan">
+          <span>المغرب</span>
+          <span>--:--</span>
+        </div>
+        <small class="remaining-time">--</small>
+      </div>
+
+      <div id="isha" class="prayer-card_times">
+        <div class="name_time_azan">
+          <span>العشاء</span>
+          <span>--:--</span>
+        </div>
+        <small class="remaining-time">--</small>
+      </div>
+    </div>
+    <audio id="azanAudio" src="audio/azan.mp3"></audio>
+    <audio id="shorokAudio" src="audio/shorok.mp3"></audio>
+    <script>
+      const CITY = "Cairo";
+      const COUNTRY = "Egypt";
+      const STORAGE_KEY = "notificationsAllowed";
+
+      // صوت الأذان العام
+      const azanAudio = new Audio("audio/azan.mp3");
+
+      // طلب إذن الإشعارات
+      function requestNotificationPermission() {
+        if (!("Notification" in window)) return;
+        const alreadyAllowed = localStorage.getItem(STORAGE_KEY);
+        if (
+          Notification.permission === "granted" ||
+          alreadyAllowed === "true"
+        ) {
+          localStorage.setItem(STORAGE_KEY, "true");
+          return;
+        }
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            localStorage.setItem(STORAGE_KEY, "true");
+          }
+        });
+      }
+
+      // تحويل الوقت من 24 ساعة لـ 12 ساعة
+      function formatTo12Hour(time24) {
+        let [hour, minute] = time24.split(":");
+        hour = parseInt(hour, 10);
+        const ampm = hour >= 12 ? "PM" : "AM";
+        hour = hour % 12 || 12;
+        return `${hour}:${minute} ${ampm}`;
+      }
+
+      // حساب الوقت المتبقي لكل صلاة
+      function startRemainingCountdown(times) {
+        function update() {
+          const now = new Date();
+          Object.keys(times).forEach((key) => {
+            const card = document.getElementById(key.toLowerCase());
+            if (!card) return;
+            const remainingEl = card.querySelector(".remaining-time");
+            if (!remainingEl) return;
+            const [h, m] = times[key].split(":");
+            const target = new Date();
+            target.setHours(+h, +m, 0, 0);
+            let diff = target - now;
+            if (diff <= 0) {
+              remainingEl.innerText =
+                "0 ساعة 0 دقيقة 0 ثانية — تم إقامة الصلاة";
+              return;
+            }
+            const hours = Math.floor(diff / 3600000);
+            diff %= 3600000;
+            const minutes = Math.floor(diff / 60000);
+            diff %= 60000;
+            const seconds = Math.floor(diff / 1000);
+            remainingEl.innerText = `متبقي: ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية`;
+          });
+        }
+        update();
+        setInterval(update, 1000);
+      }
+
+      // جلب أوقات الصلاة من API
+      async function fetchPrayerTimes(city, country) {
+        const url = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=5`;
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const times = data.data.timings;
+
+          // عرض الوقت بالـ 12 ساعة
+          ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"].forEach(
+            (prayer) => {
+              const cardSpan = document.querySelector(
+                `#${prayer.toLowerCase()} .name_time_azan span:last-child`
+              );
+              if (cardSpan) cardSpan.innerText = formatTo12Hour(times[prayer]);
+            }
+          );
+
+          // بدء العد التنازلي للوقت المتبقي
+          startRemainingCountdown(times);
+
+          // جدولة الأذان والإشعارات
+          scheduleAzan(times);
+        } catch (error) {
+          console.error("فشل في جلب مواقيت الصلاة:", error);
+        }
+      }
+
+      // تشغيل الأذان والإشعار عند وقت الصلاة
+      function scheduleAzan(times) {
+        const now = new Date();
+        const prayerTimes = {
+          Fajr: times.Fajr,
+          Sunrise: times.Sunrise,
+          Dhuhr: times.Dhuhr,
+          Asr: times.Asr,
+          Maghrib: times.Maghrib,
+          Isha: times.Isha,
+        };
+
+        Object.keys(prayerTimes).forEach((prayer) => {
+          const [hour, minute] = prayerTimes[prayer].split(":");
+          const prayerDate = new Date();
+          prayerDate.setHours(+hour, +minute, 0, 0);
+          let delay = prayerDate - now;
+          if (delay < 0) return;
+
+          setTimeout(() => {
+            // تشغيل صوت الأذان
+            azanAudio.currentTime = 0;
+            azanAudio.play().catch(() => {});
+
+            // إرسال إشعار
+            if (
+              Notification.permission === "granted" ||
+              localStorage.getItem(STORAGE_KEY) === "true"
+            ) {
+              new Notification(`🕌 وقت ${prayer}`, {
+                body: `حان وقت صلاة ${prayer}`,
+                icon: "https://github.com/ziadabuolila/el_quran_elkarem/blob/main/img/El_Quran_Elkarem_icon.png?raw=true",
+              });
+            }
+          }, delay);
+        });
+      }
+
+      // استدعاء الدوال
+      requestNotificationPermission();
+      fetchPrayerTimes(CITY, COUNTRY);
+      setInterval(() => fetchPrayerTimes(CITY, COUNTRY), 1000 * 60 * 60);
+    </script>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

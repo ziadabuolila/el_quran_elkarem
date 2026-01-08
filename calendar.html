@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>التقويم</title>
+  </head>
+
+  <body>
+    <style>
+      .div_calendar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 150px 0 0 0;
+      }
+      .calendar {
+        background: #fff;
+        width: 100%;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        max-width: 365px;
+      }
+
+      .cal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .cal-header button {
+        border: none;
+        background: none;
+        font-size: 26px;
+        background: linear-gradient(to left, #114b5f, #8b8b8b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .cal-header button:hover {
+        transform: scale(1.2);
+      }
+
+      .month-title {
+        font-size: 22px;
+        background: linear-gradient(to left, #114b5f, #8b8b8b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+      }
+
+      .weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        text-align: center;
+        background: linear-gradient(to left, #114b5f, #8b8b8b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 14px;
+        border-bottom: 2px solid #114b5f;
+        padding-bottom: 6px;
+      }
+
+      .days_calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+        margin-top: 12px;
+      }
+
+      .day {
+        height: 45px;
+        background: #f7fbff;
+        border-radius: 10px;
+        cursor: default;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .day:hover {
+        background: #e3f0ff;
+        transform: translateY(-3px);
+      }
+
+      .day-number {
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .friday .day-number {
+        color: #e53935;
+      }
+
+      .today {
+        outline: 2px solid #114b5f;
+      }
+
+      .empty {
+        background: transparent;
+        pointer-events: none;
+      }
+    </style>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html" class="active"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html" id="active">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+
+    <div class="div_calendar">
+      <div class="calendar">
+        <div class="cal-header">
+          <button id="prev">‹</button>
+          <div class="month-title" id="monthTitle"></div>
+          <button id="next">›</button>
+        </div>
+
+        <div class="weekdays">
+          <div>أحد</div>
+          <div>إثنين</div>
+          <div>ثلاثاء</div>
+          <div>أربعاء</div>
+          <div>خميس</div>
+          <div>جمعة</div>
+          <div>سبت</div>
+        </div>
+
+        <div class="days_calendar" id="days"></div>
+      </div>
+    </div>
+    <script>
+      const months = [
+        "يناير",
+        "فبراير",
+        "مارس",
+        "أبريل",
+        "مايو",
+        "يونيو",
+        "يوليو",
+        "أغسطس",
+        "سبتمبر",
+        "أكتوبر",
+        "نوفمبر",
+        "ديسمبر",
+      ];
+
+      let currentDate = new Date();
+      const today = new Date();
+
+      const daysBox = document.getElementById("days");
+      const monthTitle = document.getElementById("monthTitle");
+
+      function render() {
+        daysBox.innerHTML = "";
+
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        monthTitle.innerText = months[month] + " " + year;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let i = 0; i < firstDay; i++) {
+          daysBox.innerHTML += `<div class="day empty"></div>`;
+        }
+
+        for (let d = 1; d <= daysInMonth; d++) {
+          const dateObj = new Date(year, month, d);
+          const div = document.createElement("div");
+          div.className = "day";
+
+          if (dateObj.getDay() === 5) div.classList.add("friday");
+
+          if (
+            d === today.getDate() &&
+            month === today.getMonth() &&
+            year === today.getFullYear()
+          ) {
+            div.classList.add("today");
+          }
+
+          div.innerHTML = `<div class="day-number">${d}</div>`;
+          daysBox.appendChild(div);
+        }
+      }
+
+      document.getElementById("prev").onclick = () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        render();
+      };
+
+      document.getElementById("next").onclick = () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        render();
+      };
+
+      render();
+    </script>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>
