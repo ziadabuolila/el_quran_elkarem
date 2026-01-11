@@ -207,6 +207,50 @@
         <small class="remaining-time">--</small>
       </div>
     </div>
+    <section class="prayer-page">
+      <div class="prayer-card">
+        <!-- Header -->
+        <div class="prayer-header">
+          <h1 class="prayer-title">جدول متابعة الصلاة</h1>
+          <p class="prayer-date" id="prayerDate"></p>
+        </div>
+
+        <!-- Summary -->
+        <div class="prayer-summary">
+          <div class="summary-box summary-done">
+            <span class="summary-number" id="doneCount">0</span>
+            <span class="summary-text">صليت</span>
+          </div>
+
+          <div class="summary-box summary-missed">
+            <span class="summary-number" id="missedCount">0</span>
+            <span class="summary-text">فاتك</span>
+          </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="prayer-progress">
+          <div class="prayer-progress-bar" id="progressBar"></div>
+        </div>
+
+        <p class="prayer-complete-message" id="completeMessage"></p>
+
+        <!-- Table -->
+        <div class="prayer-table-wrapper">
+          <table class="prayer-table">
+            <thead class="prayer-table-head">
+              <tr class="prayer-table-row">
+                <th class="prayer-table-th">الصلاة</th>
+                <th class="prayer-table-th">الحالة</th>
+                <th class="prayer-table-th">تسجيل</th>
+              </tr>
+            </thead>
+            <tbody class="prayer-table-body" id="prayerTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <audio id="azanAudio" src="audio/azan.mp3"></audio>
     <audio id="shorokAudio" src="audio/shorok.mp3"></audio>
     <script>
@@ -346,6 +390,86 @@
       setInterval(() => fetchPrayerTimes(CITY, COUNTRY), 1000 * 60 * 60);
     </script>
 
+    <script>
+      const prayerList = ["الفجر", "الظهر", "العصر", "المغرب", "العشاء"];
+      const todayKey = new Date().toLocaleDateString("ar-EG");
+
+      const prayerDate = document.getElementById("prayerDate");
+      const prayerTableBody = document.getElementById("prayerTableBody");
+      const doneCount = document.getElementById("doneCount");
+      const missedCount = document.getElementById("missedCount");
+      const progressBar = document.getElementById("progressBar");
+      const completeMessage = document.getElementById("completeMessage");
+
+      function renderDate() {
+        prayerDate.textContent = new Date().toLocaleDateString("ar-EG", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      }
+
+      function loadPrayerTable() {
+        const data = JSON.parse(localStorage.getItem("prayerTracker")) || {};
+        const todayData = data[todayKey] || {};
+
+        prayerTableBody.innerHTML = "";
+
+        let done = 0;
+        let missed = 0;
+
+        prayerList.forEach((prayer) => {
+          const status = todayData[prayer];
+
+          if (status === "yes") done++;
+          if (status === "no") missed++;
+
+          const row = document.createElement("tr");
+          row.className = "prayer-table-row";
+
+          row.innerHTML = `
+      <td class="prayer-table-td">${prayer}</td>
+      <td class="prayer-table-td ${
+        status === "yes"
+          ? "prayer-status--done"
+          : status === "no"
+          ? "prayer-status--missed"
+          : ""
+      }">
+        ${status === "yes" ? "✔️ صليت" : status === "no" ? "❌ لم أصلِّ" : "—"}
+      </td>
+      <td class="prayer-table-td">
+        <div class="prayer-actions">
+          <button class="prayer-btn prayer-btn--yes" onclick="savePrayer('${prayer}','yes')">صليت</button>
+          <button class="prayer-btn prayer-btn--no" onclick="savePrayer('${prayer}','no')">لم أصلِّ</button>
+        </div>
+      </td>
+    `;
+
+          prayerTableBody.appendChild(row);
+        });
+
+        doneCount.textContent = done;
+        missedCount.textContent = missed;
+        progressBar.style.width = (done / prayerList.length) * 100 + "%";
+
+        completeMessage.textContent =
+          done === prayerList.length ? "🌟 يوم صلاة كامل – بارك الله فيك" : "";
+      }
+
+      function savePrayer(prayer, value) {
+        const data = JSON.parse(localStorage.getItem("prayerTracker")) || {};
+        if (!data[todayKey]) data[todayKey] = {};
+        data[todayKey][prayer] = value;
+
+        localStorage.setItem("prayerTracker", JSON.stringify(data));
+        loadPrayerTable();
+      }
+
+      renderDate();
+      loadPrayerTable();  
+    </script>
     <script src="js/jquery-3.7.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/all.min.js"></script>
