@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff">    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="manifest" href="../manifest.json">
+    <title>سورة الرحمن</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="../img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="../index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="../indice.html" class="active"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="../music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="../sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="../supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="../chapelet.html"> السبحة </a>
+            </li>
+                        <li>
+              <a href="../times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="../supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="../favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="../calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="../library_section.html">مقالات</a>
+            </li>
+            <li>
+              <a href="../wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="../img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="../index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="../indice.html" id="active">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="../music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="../sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="../supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="../chapelet.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="../times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="../supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="../favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="../calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="../library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="../wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="share-box">
+      <button class="share-main">
+        <i class="fas fa-share-alt"></i>
+      </button>
+      <div class="share-menu">
+        <a href="#" class="whatsapp" id="shareWhatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="facebook" id="shareFacebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="telegram" id="shareTelegram">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+      </div>
+    </div>
+    <div class="info">
+      <div class="sura-card">
+        <div class="sura-header">
+          <span class="icon">📖</span>
+          <h2>سورة الرحمن</h2>
+        </div>
+        <div class="sura-details">
+          <div class="detail"><span>النوع :</span> مدنية</div>
+          <div class="detail"><span>رقم السورة :</span> 55</div>
+          <div class="detail"><span>عدد الآيات :</span> 78</div>
+          <div class="detail"><span>عدد الكلمات :</span> 352</div>
+          <div class="detail">
+            <span>الاسم بالإنجليزية :</span> The Beneficent
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom">
+      <input
+        type="number"
+        id="searchInput"
+        class="input-custom"
+        placeholder="اكتب رقم الآية اللتي تم الوقوف عليها"
+      />
+      <button id="saveBtn" class="btn-custom">حفظ</button>
+      <button type="reset" id="clearBtn" class="btn-custom btn-clear">
+        مسح
+      </button>
+    </div>
+    <div id="message" class="message"></div>
+    <div class="quran">
+      <div class="quran-wrapper">
+        <h1 class="sura-title">سورة الرحمن</h1>
+        <div class="bismillah_up">بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</div>
+        <div class="ayah" id="ayah">
+          ٱلرَّحۡمَٰنُ (1) عَلَّمَ ٱلۡقُرۡءَانَ (2) خَلَقَ ٱلۡإِنسَٰنَ (3)
+          عَلَّمَهُ ٱلۡبَيَانَ (4) ٱلشَّمۡسُ وَٱلۡقَمَرُ بِحُسۡبَانٖ (5)
+          وَٱلنَّجۡمُ وَٱلشَّجَرُ يَسۡجُدَانِ (6) وَٱلسَّمَآءَ رَفَعَهَا
+          وَوَضَعَ ٱلۡمِيزَانَ (7) أَلَّا تَطۡغَوۡاْ فِي ٱلۡمِيزَانِ (8)
+          وَأَقِيمُواْ ٱلۡوَزۡنَ بِٱلۡقِسۡطِ وَلَا تُخۡسِرُواْ ٱلۡمِيزَانَ (9)
+          وَٱلۡأَرۡضَ وَضَعَهَا لِلۡأَنَامِ (10) فِيهَا فَٰكِهَةٞ وَٱلنَّخۡلُ
+          ذَاتُ ٱلۡأَكۡمَامِ (11) وَٱلۡحَبُّ ذُو ٱلۡعَصۡفِ وَٱلرَّيۡحَانُ (12)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (13) خَلَقَ ٱلۡإِنسَٰنَ
+          مِن صَلۡصَٰلٖ كَٱلۡفَخَّارِ (14) وَخَلَقَ ٱلۡجَآنَّ مِن مَّارِجٖ مِّن
+          نَّارٖ (15) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (16) رَبُّ
+          ٱلۡمَشۡرِقَيۡنِ وَرَبُّ ٱلۡمَغۡرِبَيۡنِ (17) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (18) مَرَجَ ٱلۡبَحۡرَيۡنِ يَلۡتَقِيَانِ (19)
+          بَيۡنَهُمَا بَرۡزَخٞ لَّا يَبۡغِيَانِ (20) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (21) يَخۡرُجُ مِنۡهُمَا ٱللُّؤۡلُؤُ
+          وَٱلۡمَرۡجَانُ (22) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (23)
+          وَلَهُ ٱلۡجَوَارِ ٱلۡمُنشَـَٔاتُ فِي ٱلۡبَحۡرِ كَٱلۡأَعۡلَٰمِ (24)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (25) كُلُّ مَنۡ عَلَيۡهَا
+          فَانٖ (26) وَيَبۡقَىٰ وَجۡهُ رَبِّكَ ذُو ٱلۡجَلَٰلِ وَٱلۡإِكۡرَامِ
+          (27) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (28) يَسۡـَٔلُهُۥ مَن
+          فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۚ كُلَّ يَوۡمٍ هُوَ فِي شَأۡنٖ (29)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (30) سَنَفۡرُغُ لَكُمۡ
+          أَيُّهَ ٱلثَّقَلَانِ (31) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ
+          (32) يَٰمَعۡشَرَ ٱلۡجِنِّ وَٱلۡإِنسِ إِنِ ٱسۡتَطَعۡتُمۡ أَن تَنفُذُواْ
+          مِنۡ أَقۡطَارِ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ فَٱنفُذُواْۚ لَا تَنفُذُونَ
+          إِلَّا بِسُلۡطَٰنٖ (33) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ
+          (34) يُرۡسَلُ عَلَيۡكُمَا شُوَاظٞ مِّن نَّارٖ وَنُحَاسٞ فَلَا
+          تَنتَصِرَانِ (35) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (36)
+          فَإِذَا ٱنشَقَّتِ ٱلسَّمَآءُ فَكَانَتۡ وَرۡدَةٗ كَٱلدِّهَانِ (37)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (38) فَيَوۡمَئِذٖ لَّا
+          يُسۡـَٔلُ عَن ذَنۢبِهِۦٓ إِنسٞ وَلَا جَآنّٞ (39) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (40) يُعۡرَفُ ٱلۡمُجۡرِمُونَ بِسِيمَٰهُمۡ
+          فَيُؤۡخَذُ بِٱلنَّوَٰصِي وَٱلۡأَقۡدَامِ (41) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (42) هَٰذِهِۦ جَهَنَّمُ ٱلَّتِي يُكَذِّبُ
+          بِهَا ٱلۡمُجۡرِمُونَ (43) يَطُوفُونَ بَيۡنَهَا وَبَيۡنَ حَمِيمٍ ءَانٖ
+          (44) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (45) وَلِمَنۡ خَافَ
+          مَقَامَ رَبِّهِۦ جَنَّتَانِ (46) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا
+          تُكَذِّبَانِ (47) ذَوَاتَآ أَفۡنَانٖ (48) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (49) فِيهِمَا عَيۡنَانِ تَجۡرِيَانِ (50)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (51) فِيهِمَا مِن كُلِّ
+          فَٰكِهَةٖ زَوۡجَانِ (52) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ
+          (53) مُتَّكِـِٔينَ عَلَىٰ فُرُشِۭ بَطَآئِنُهَا مِنۡ إِسۡتَبۡرَقٖۚ
+          وَجَنَى ٱلۡجَنَّتَيۡنِ دَانٖ (54) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا
+          تُكَذِّبَانِ (55) فِيهِنَّ قَٰصِرَٰتُ ٱلطَّرۡفِ لَمۡ يَطۡمِثۡهُنَّ
+          إِنسٞ قَبۡلَهُمۡ وَلَا جَآنّٞ (56) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا
+          تُكَذِّبَانِ (57) كَأَنَّهُنَّ ٱلۡيَاقُوتُ وَٱلۡمَرۡجَانُ (58)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (59) هَلۡ جَزَآءُ
+          ٱلۡإِحۡسَٰنِ إِلَّا ٱلۡإِحۡسَٰنُ (60) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا
+          تُكَذِّبَانِ (61) وَمِن دُونِهِمَا جَنَّتَانِ (62) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (63) مُدۡهَآمَّتَانِ (64) فَبِأَيِّ ءَالَآءِ
+          رَبِّكُمَا تُكَذِّبَانِ (65) فِيهِمَا عَيۡنَانِ نَضَّاخَتَانِ (66)
+          فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (67) فِيهِمَا فَٰكِهَةٞ
+          وَنَخۡلٞ وَرُمَّانٞ (68) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ
+          (69) فِيهِنَّ خَيۡرَٰتٌ حِسَانٞ (70) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا
+          تُكَذِّبَانِ (71) حُورٞ مَّقۡصُورَٰتٞ فِي ٱلۡخِيَامِ (72) فَبِأَيِّ
+          ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (73) لَمۡ يَطۡمِثۡهُنَّ إِنسٞ
+          قَبۡلَهُمۡ وَلَا جَآنّٞ (74) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا
+          تُكَذِّبَانِ (75) مُتَّكِـِٔينَ عَلَىٰ رَفۡرَفٍ خُضۡرٖ وَعَبۡقَرِيٍّ
+          حِسَانٖ (76) فَبِأَيِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ (77)
+          تَبَٰرَكَ ٱسۡمُ رَبِّكَ ذِي ٱلۡجَلَٰلِ وَٱلۡإِكۡرَامِ (78)
+        </div>
+<div class="bismillah_down">صَدَقَ اللَّهُ الْعَظِيمُ</div>
+        <footer>تصميم فاخر - قرآن كريم</footer>
+      </div>
+    </div>
+    <div class="divs_btns">
+      <div class="btns_url_links_pages_lemur">
+        <a href="../readers/mohamed_mahmoud/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت الشيخ محمد محمود الطبلاوي
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        <a href="../readers/ali_elbana/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت الشيخ محمود علي البنا
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        <a href="../readers/abdelbaset_abdelsamad/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت الشيخ عبدالباسط عبدالصمد
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        <a href="../readers/mahmoud_khalel/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت الشيخ محمود خليل الحصري
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        <a href="../readers/elmenshwy/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت الشيخ محمد صديق المنشاوي
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        <a href="../readers/refat/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت الشيخ محمد رفعت
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        <a href="../readers/yasser/index.html">
+          <button class="cssbuttons-io-button">
+            قراءة السورة بصوت ياسر الدوسري
+            <div class="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+      </div>
+    </div>
+    <button id="scrollTopBtn" title="العودة للأعلى">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <script>
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <div class="btns">
+      <div class="btn right" id="precedent">
+        <i class="fa-solid fa-chevron-right"></i>
+        <p>السورة السابقه</p>
+      </div>
+      <div class="btn left" id="le_prochain">
+        <p>السورة التالية</p>
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("precedent");
+        if (!btn) return;
+        btn.addEventListener("click", function (e) {
+          btn.style.transform = "scale(0.98)";
+          setTimeout(function () {
+            window.location.href = "54.html";
+          }, 80);
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("le_prochain");
+        if (!btn) return;
+        btn.addEventListener("click", function (e) {
+          btn.style.transform = "scale(0.98)";
+          setTimeout(function () {
+            window.location.href = "56.html";
+          }, 80);
+        });
+      });
+    </script>
+<script>
+  const input = document.getElementById("searchInput");
+  const saveBtn = document.getElementById("saveBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const ayahDiv = document.getElementById("ayah");
+  const message = document.getElementById("message");
+
+  // 🔑 مفتاح خاص بكل صفحة
+  const pageKey = "highlightedNumber_" + window.location.pathname;
+
+  function highlightNumber(num) {
+    let text = ayahDiv.textContent;
+    let found = false;
+
+    ayahDiv.innerHTML = text.replace(/\(\d+\)/g, (match) => {
+      let number = match.replace(/[()]/g, "");
+      if (number == num) {
+        found = true;
+        return `<span class="highlight">(${number})</span>`;
+      }
+      return `(${number})`;
+    });
+
+    return found;
+  }
+
+  saveBtn.addEventListener("click", () => {
+    let value = input.value.trim();
+
+    if (value) {
+      let found = highlightNumber(value);
+
+      if (found) {
+        localStorage.setItem(pageKey, value);
+        message.textContent = "";
+      } else {
+        message.textContent = `لا يوجد رقم (${value})`;
+        localStorage.removeItem(pageKey);
+      }
+    }
+  });
+
+  clearBtn.addEventListener("click", () => {
+    localStorage.removeItem(pageKey);
+    ayahDiv.innerHTML = ayahDiv.textContent;
+    message.textContent = "";
+    input.value = "";
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    let savedNum = localStorage.getItem(pageKey);
+    if (savedNum) {
+      highlightNumber(savedNum);
+    }
+  });
+</script>
+    <script src="../js/jquery-3.7.0.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/share_sura.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("../js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

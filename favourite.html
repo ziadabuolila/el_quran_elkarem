@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>المفضلة</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html" class="active"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html" id="active">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="ابحث عن السور ......." />
+    </div>
+    <div id="noResults" class="no-results">❌ لا يوجد نتائج مطابقة لبحثك</div>
+    <div class="quran-list" id="quranList"></div>
+    <button id="scrollTopBtn" title="العودة للأعلى">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <div id="contextMenu" class="context-menu">
+      <button id="favBtn">
+        <i class="fa-solid fa-trash"></i>
+        إزالة من المفضلة
+      </button>
+    </div>
+
+    <script>
+      const quranList = document.getElementById("quranList");
+      const menuFavourite = document.getElementById("contextMenu");
+      const favBtn = document.getElementById("favBtn");
+
+      let currentLink = null;
+      let currentItem = null;
+
+      let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+      function renderFavourites() {
+        quranList.innerHTML = "";
+
+        if (favourites.length === 0) {
+          quranList.innerHTML =
+            "<p style='text-align:center; font-weight:900;'>لا توجد سور في المفضلة ❤️</p>";
+          return;
+        }
+
+        favourites.forEach((item, index) => {
+          const link = document.createElement("a");
+          link.href = item.link;
+          link.className = "sura-link";
+
+          link.innerHTML = `
+        <div class="sura">
+          <div class="sura-name">${item.name}</div>
+          <div class="sura-ayahs">
+            <span>${item.ayahs}</span>
+          </div>
+        </div>
+      `;
+
+          quranList.appendChild(link);
+
+          link.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            showMenu(e.clientX, e.clientY, link, item, index + 1);
+          });
+        });
+      }
+
+      renderFavourites();
+
+      function showMenu(x, y, link, item, number) {
+        currentLink = link;
+        currentItem = {
+          ...item,
+          number: number,
+        };
+
+        menuFavourite.style.display = "block";
+        menuFavourite.style.top = y + "px";
+        menuFavourite.style.left = x + "px";
+      }
+
+      document.addEventListener("click", () => {
+        menuFavourite.style.display = "none";
+      });
+
+      favBtn.addEventListener("click", () => {
+        if (!currentLink || !currentItem) return;
+
+        const confirmDelete = confirm(
+            `هل أنت متأكد من حذف السورة "${currentItem.name}" رقم ${currentItem.ayahs} من المفضلة ؟`
+        );
+
+        if (!confirmDelete) return;
+
+        favourites = favourites.filter(
+          (item) => item.link !== currentItem.link
+        );
+
+        localStorage.setItem("favourites", JSON.stringify(favourites));
+
+        currentLink.remove();
+
+        // بدل alert نستخدم showToast
+        showToast(
+          "success",
+          "تم الحذف",
+          `تم حذف سورة ${currentItem.name} من المفضلة`
+        );
+        currentLink = null;
+        currentItem = null;
+        menuFavourite.style.display = "none";
+
+        if (favourites.length === 0) {
+          quranList.innerHTML =
+            "<p style='text-align:center; font-weight:900;'>لا توجد سور في المفضلة</p>";
+        }
+      });
+    </script>
+
+    <script>
+      function showToast(
+        type = "info",
+        title = "",
+        message = "",
+        duration = 3000
+      ) {
+        const toast = document.createElement("div");
+        toast.className = `toast ${type}`;
+
+        let icon = "";
+        switch (type) {
+          case "success":
+            icon = "fa-circle-check";
+            break;
+          case "error":
+            icon = "fa-circle-xmark";
+            break;
+          case "warning":
+            icon = "fa-triangle-exclamation";
+            break;
+          default:
+            icon = "fa-circle-info";
+        }
+
+        toast.innerHTML = `
+        <div class="toast-icon">
+            <i class="fas ${icon}"></i>
+        </div>
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <button class="toast-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="toast-progress"></div>
+    `;
+
+        let container = document.querySelector(".toast-container");
+        if (!container) {
+          container = document.createElement("div");
+          container.className = "toast-container";
+          document.body.appendChild(container);
+        }
+
+        container.appendChild(toast);
+
+        toast.querySelector(".toast-close").onclick = () => closeToast(toast);
+
+        const progress = toast.querySelector(".toast-progress");
+        progress.style.animation = `progress-shrink ${
+          duration / 1000
+        }s linear forwards`;
+
+        setTimeout(() => closeToast(toast), duration);
+        setTimeout(() => toast.classList.add("show"), 10);
+      }
+
+      function closeToast(toast) {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+      }
+
+      /* animation مرة واحدة */
+      if (!document.getElementById("toast-style")) {
+        const style = document.createElement("style");
+        style.id = "toast-style";
+        style.textContent = `
+        @keyframes progress-shrink {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(0); }
+        }
+    `;
+        document.head.appendChild(style);
+      }
+    </script>
+
+    <script>
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script>
+      const searchInput = document.getElementById("search");
+      const quranLinks = document.querySelectorAll(".quran-list a");
+      const noResults = document.getElementById("noResults");
+
+      searchInput.addEventListener("input", function () {
+        const filter = searchInput.value.trim().toLowerCase();
+        let matches = 0;
+
+        quranLinks.forEach((link) => {
+          const name = link.querySelector(".sura-name").innerText.toLowerCase();
+
+          if (name.includes(filter)) {
+            link.style.display = "block";
+            link.style.order = filter === "" ? "0" : "-1";
+            matches++;
+          } else {
+            link.style.display = "none";
+          }
+        });
+
+        noResults.style.display =
+          matches === 0 && filter !== "" ? "block" : "none";
+      });
+    </script>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

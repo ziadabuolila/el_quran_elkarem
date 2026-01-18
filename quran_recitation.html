@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>آداب تلاوة القرآن الكريم</title>
+  </head>
+
+  <body>
+    <style>
+      .container_hadith_section {
+        margin: 0 10px 0 10px;
+      }
+      .hadith-section {
+        background: #f7fbff;
+        padding: 20px 20px;
+        border-radius: 25px;
+        max-width: 786px;
+        margin: 105px auto;
+        font-family: "Cairo", sans-serif;
+        color: #114b5f;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        width: 100%;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        color: #114b5f;
+      }
+
+      .intro-text {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #8b8b8b;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .hadiths {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .hadith {
+        background: #fff;
+        padding: 10px 10px;
+        border-radius: 18px;
+        position: relative;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s;
+      }
+
+      .hadith:hover {
+        transform: translateY(-6px);
+      }
+
+      .quote-icon {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        font-size: 20px;
+        color: #114b5f;
+      }
+
+      .hadith p {
+        font-size: 15px;
+        line-height: 1.9;
+        color: #114b5f;
+        margin: 0;
+      }
+
+      .source {
+        display: block;
+        margin-top: 8px;
+        font-size: 13px;
+        color: #8b8b8b;
+        font-style: italic;
+      }
+
+      .conclusion {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #114b5f;
+      }
+    </style>
+    <!-- ----- style loadet page ----- -->
+    <style>
+      #loaderOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+
+      .loader_book {
+        width: 200px;
+        height: 200px;
+        perspective: 200px;
+        position: relative;
+      }
+
+      .dot_book {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        margin-top: -60px;
+        margin-left: -60px;
+        border-radius: 100px;
+        border: 40px outset #1e3f57;
+        transform-origin: 50% 50%;
+        transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+        background-color: transparent;
+        animation: dot1 1000ms cubic-bezier(0.49, 0.06, 0.43, 0.85) infinite;
+      }
+
+      .dot_book:nth-child(2) {
+        width: 140px;
+        height: 140px;
+        margin-top: -70px;
+        margin-left: -70px;
+        border-width: 30px;
+        border-color: #447891;
+        animation-name: dot2;
+        animation-delay: 75ms;
+        box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+      }
+
+      .dot_book:nth-child(3) {
+        width: 160px;
+        height: 160px;
+        margin-top: -80px;
+        margin-left: -80px;
+        border-width: 20px;
+        border-color: #6bb2cd;
+        animation-name: dot3;
+        animation-delay: 150ms;
+        box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg) translateZ(-25px);
+      }
+
+      @keyframes dot1 {
+        0% {
+          border-color: #1e3f57;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+        50% {
+          border-color: #1e574f;
+          transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg)
+            translateZ(0px);
+        }
+        100% {
+          border-color: #1e3f57;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+      }
+
+      @keyframes dot2 {
+        0% {
+          border-color: #447891;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+        50% {
+          border-color: #449180;
+          transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg)
+            translateZ(0px);
+        }
+        100% {
+          border-color: #447891;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+      }
+
+      @keyframes dot3 {
+        0% {
+          border-color: #6bb2cd;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+        50% {
+          border-color: #6bcdb2;
+          transform: rotateX(20deg) rotateY(20deg) rotateZ(50deg)
+            translateZ(0px);
+        }
+        100% {
+          border-color: #6bb2cd;
+          transform: rotateX(24deg) rotateY(20deg) rotateZ(0deg)
+            translateZ(-25px);
+        }
+      }
+    </style>
+    <div id="loaderOverlay">
+      <div class="loader_book">
+        <div class="dot_book"></div>
+        <div class="dot_book"></div>
+        <div class="dot_book"></div>
+      </div>
+    </div>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html" class="active"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html" id="active">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="container_hadith_section">
+      <section class="hadith-section">
+        <div class="container">
+          <h1 class="section-title">آداب تلاوة القرآن الكريم</h1>
+          <p class="intro-text">آداب تلاوة القرآن الكريم</p>
+          <div class="hadiths">
+            <div class="hadith">
+              <p>
+                1- إخلاص النية لله سبحانه وحده في القراءة أو الحفظ ، وطلب الأجر
+                والثواب من الله تعالى ، والبعد عن الرياء والسمعة والمباهاة .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                فعن عمران بن حصين رضي الله عنهما أنه مرّ على قارئ يقرأ ثم سأل –
+                أي سأل الناس – فاسترجع ثم قال : سمعت رسول الله ﷺ يقول : ” من قرأ
+                القرآن فليسأل الله به ، فإنه سيجيء أقوام يقرؤون القرآن ، يسألون
+                به الناس ” (رواه الترمذي ، وصححه الشيخ الألباني في الصحيحة ( 257
+                ) ) .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وقد جاء في الحديث : ” مَن قَرأ حرفاً من كتاب الله ، فله به حسنة
+                ، والحسنة بعشر أمثالها ، لا أقولُ { آلم } حرف ، ولكن : ألفٌ حرفٌ
+                ، ولامٌ حرف ، وميم حرف ” رواه الترمذي . وقال ﷺ : ” اقرؤوا القرآن
+                ، فإنه يأتي شفيعا لأصحابه يوم القيامة ” (رواه مسلم) .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                2- يستحب للقارئ الطهارة من الحدثين الأصغر والأكبر. أما مس القرآن
+                ، فلا بد له من الوضوء ، لقوله عليه الصلاة والسلام : ” لا يمس
+                القرآن إلا طاهر ” رواه الطبراني في معاجمه والدارقطني والحاكم .
+                وكذا مراعاة النظافة في البدن والثياب والمكان .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                ولهذا استحب جماعة من العلماء القراءة في المسجد ، لكونه جامعاً
+                للنظافة ، وشرف البقعة .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                3- ومن آداب تلاوة القرآن أن ينظف القارئ فمه بالسواك وغيره . قال
+                علي رضي الله عنه : إنّ أفواهكم طُرقٌ للقرآن ، فطيّبوها بالسواك .
+                (رواه ابن ماجة وصححه الألباني).
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                4- يستحب استقبال القبلة عند القراءة .وتجوز قراءة القرآن واقفا
+                وماشيا وراكبا ومضطجعا . قال تعالى : { الَّذِينَ يَذْكُرُونَ
+                اللّهَ قِيَاماً وَقُعُوداً وَعَلَىَ جُنُوبِهِمْ وَيَتَفَكَّرُونَ
+                فِي خَلْقِ السَّمَاوَاتِ وَالأَرْضِ } (آل عمران : 191) . ولا
+                يشترط الحجاب لتلاوة القرآن للنساء .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                5- الاستعاذة من الشيطان الرجيم ، لأنه مطردة له . لقوله تعالى : {
+                فَإِذَا قَرَأْتَ الْقُرآنَ فَاسْتَعِذْ بِاللّهِ مِنَ
+                الشَّيْطَانِ الرَّجِيمِ} ( النحل : 98) .وتقدير الآية عند الجمهور
+                : إذا أردت القراءة فاستعذ بالله .وذلك أن الشيطان يحضر عند شروعه
+                بالقراءة ، ليصرفه عن مقاصد القرآن الجليلة ، ومعانيه العظيمة ،
+                والتي فيها صلاح دينه وديناه .والاستعاذة مستحبة لكل قارئ ، في
+                الصلاة وخارجها .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وكان النبي ﷺ يستعيذ بالله فيقول : ” أعوذ بالله من الشيطان الرجيم
+                ، من همزه ونفخه ونفثه ” (رواه أبو داود وابن ماجة وصححه ابن حبان)
+                . وكان أحيانا يزيد فيقول : ” أعوذ بالله السميع العليم من الشيطان
+                … ” (رواه أبوداود والترمذي) .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                6- القراءة بخشوع قلب ، وسكون جوارح ، مع استشعار عظمة من يقرأ
+                كلامه . قال تعالى : { لَوْ أَنزَلْنَا هَذَا الْقُرْآنَ عَلَى
+                جَبَلٍ لَّرَأَيْتَهُ خَاشِعاً مُّتَصَدِّعاً مِّنْ خَشْيَةِ
+                اللَّهِ وَتِلْكَ الأمْثَالُ نَضْرِبُهَا لِلنَّاسِ لَعَلَّهُمْ
+                يَتَفَكَّرُونَ } (الحشر: 21) . وقوله : { وَيَخِرُّونَ
+                لِلأَذْقَانِ يَبْكُونَ وَيَزِيدُهُمْ خُشُوعاً } (الإسراء : 109)
+                .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وأن يكون بعيدا عن مواضع اللغط ، وارتفاع الأصوات ، وليترك العبث
+                باليد وغيرها ، فإنه يناجي ربه سبحانه وتعالى ، ومن ذلك النظر إلى
+                ما يلهي ويبدد الذهن ، ليتحقق له الخشوع في القراءة ، أو الإنصات
+                للتلاوة .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                7- التدبّر أثناء القراءة ، والتفكر في معاني الآيات التي يقرأها ،
+                وعدم هذّه ، والاستعجال في قراءته ، فبذلك تنشرح الصدور ، وتستنير
+                القلوب .لقوله سبحانه : { كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ
+                لِّيَدَّبَّرُوا آيَاتِهِ وَلِيَتَذَكَّرَ أُوْلُوا الْأَلْبَابِ }
+                (ص : 29). .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وقوله تعالى : { أَفَلا يَتَدَبَّرُونَ الْقُرْآنَ أَمْ عَلَى
+                قُلُوبٍ أَقْفَالُهَا } (محمد : 24) .وقد قام النبي ﷺ بآية يرددها
+                حتى أصبح ، وهي قوله { إن تعذبهم فإنهم عبادك وإن تغفر لهم فإنك
+                أنت العزيز الحكيم} ( المائدة : 118 ) . (رواه أحمد والنسائي) .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وجاء رجل إلى ابن مسعود رضي الله عنه فقال : إني لأقرأ المفصل في
+                ركعة ؟! فقال عبد الله : هذّاً كهذّ الشعر ؟! إن أقواماً يقرؤون
+                القرآن لا يُجاوز تَراقيهم ، ولكن إذا وقع في القلب فرسخ فيه ، نفع
+                . (رواه مسلم ( 822) وأحمد (3607 )) . والهذّ : شدة الإسراع في
+                القراءة ، وهي عادة العرب في الشعر .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وقال ابن مسعود رضي الله عنه أيضا : ” من أراد علماً فليقرأ القرآن
+                ، فإن فيه خير الأولين والآخرين ” .وسنده صحيح ، أخرجه الإمام أحمد
+                في الزهد ( ص 157) وابن أبي شيبة ( 35839) وغيرهما .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وقال الحسن البصري : إنّ من كان قبلكم رأوا أن هذا القرآن رسائل
+                إليهم من ربهم ، فكانوا يتدبرونها بالليل ، وينفذونها في النهار .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                8 – ومن آداب تلاوة القرآن ترتيل القرآن ترتيلا ، وأن لا يختمه في
+                أقل من ثلاث ، ولا يجعل همّه عند التلاوة بلوغ آخر السورة . لقوله
+                سبحانه وتعالى : { وَرَتِّلِ الْقُرْآنَ تَرْتِيلاً } ( المزمل :
+                4) .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وقوله { وقرآناً فرقناه لتقرأه على الناس على مكث ونزلناه تنزيلا }
+                ( الإسراء : 106 ) . فقوله ( على مكث ) أي : على مُهل ، ليتدبروه
+                ويتفكروا في معانيه وعلومه.
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وقول رسوله ﷺ : ” لا يَفقه مَن قرأ القرآن في أقل من ثلاث ” (رواه
+                أحمد وأبو داود والترمذي وابن ماجة ، وصححه الألباني رحمه الله) .
+                وقالت عائشة رضي الله عنها : ولا أعلم نبي الله ﷺ قََرَأ القرآن
+                كلّه في ليلة ، ولا قام ليلةًً حتى أصبح ، ولا صام شهراً كاملا غير
+                رمضان . (رواه مسلم ( 746 ) وأحمد ( 6/54 )) .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                9- سؤال الله سبحانه من رحمته عند المرور بآيات الرحمة ، والتعوذ
+                من عذابه عند المرور بآيات العذاب . عن عوف بن مالك الأشجعي قال :
+                قمت مع رسول الله ﷺ ليلةً ، فقام فقرأ سورة البقرة ، لا يمرّ بآية
+                رحمة إلا وقف فسأل ، ولا يمر بآية عذاب إلا وقف فتعوذ . (رواه أحمد
+                وأبو داود والنسائي).
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                ويستحب هذا السؤال والاستعاذة والتسبيح لكل قارئ ، سواء كان في
+                الصلاة أو خارجها ، ويستحب ذلك في صلاة الإمام والمنفرد والمأموم ،
+                لأنه دعاء فاستووا فيه كالتأمين عقب الفاتحة ، وهذا مذهب جماهير
+                العلماء رحمهم الله . وكذا البكاء والتأثر عند قراءة القرآن ، وهو
+                صفة النبيين ، وشعار عباد الله الصالحين ، قال الله تعالى { ويخرون
+                للأذقان يبكون ويزيدهم خشوعاً } ( الإسراء : 109 ) .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                10- التغني بالقرآن وتحسين الصوت به ، دون تكلف . فعن أبي هريرة
+                رضي الله عنه قال : قال رسول الله ﷺ : ” ليس منا من لم يتغن
+                بالقرآن ” وزاد بعضهم : ” يجهر به ” (رواه البخاري ( 7527 )) .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                وعنه أيضا : أن رسول ﷺ قال : ” زيّنوا القرآنَ بأصواتكم ” (رواه
+                أحمد وأبو داود والنسائي وابن ماجة) . وقال ﷺ : ” حسّنوا القرآن
+                بأصواتكم ، فإنّ الصوت الحَسن يزيد القرآن حُسنا ” (رواه الدارمي (
+                3373 ) والحاكم والبيهقي) .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                11- ومن آداب تلاوة القرآن تقطيع القراءة آية آية : وذلك بالوقف
+                عند رؤوس الآيات . فعن أم سلمة رضي الله عنها : أنها ذكرت – أو
+                كلمة غيرها – قراءة رسول الله ﷺ { بسم الله الرحمن الرحيم * الحمد
+                لله رب العالمين * الرحمن الرحيم * ملك يوم الدين } يقطع قراءته
+                آية آية . رواه أبو داود (4001 ) . وفي رواية الترمذي ( 2928 ) :
+                كان يقطّع قراءته ، يقول { الحمد لله رب العالمين } ثم يقف {
+                الرحمن الرحيم } ثم يقف .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                12- العمل بالقرآن ، والإئتمار بأوامره ، واجتناب نواهيه ، والوقوف
+                عند حدوده ، إذً الأصل أن يكون حفظ القرآن وتلاوته ، وسيلة للعمل
+                به ، والتحاكم إليه ، وطريقا للتخلق بأخلاقه .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                13- حضور القلب عند التلاوة ، والاستماع والإنصات إلى قراءة غيره
+                في الصلاة وغيرها ، وعدم الانشغال عنها .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                لقوله سبحانه وتعالى : { وَإِذَا قُرِئَ الْقُرْآنُ فَاسْتَمِعُواْ
+                لَهُ وَأَنصِتُواْ لَعَلَّكُمْ تُرْحَمُونَ } (الأعراف : 204) .
+                ومن ذلك اجتناب الضحك واللغط والحديث خلال استماع القراءة ، إلا
+                كلاماً يضطر إليه .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                14- الأفضل أن يقرأ على ترتيب المصحف ، فيقرأ الفاتحة ثم البقرة ،
+                ثم آل عمران ، ثم ما بعدها على الترتيب ، سواء كان في الصلاة أو في
+                غيرها .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                15- ومن آداب تلاوة القرآن، عدم قطع القراءة إلا لحاجة ، كرد
+                السلام أو الأمر بمعروف أو النهي عن منكر .
+              </p>
+            </div>
+            <div class="hadith">
+              <p>
+                16- السجود عند تلاوة آية سجدة ، أو سجود القارئ . فعن أبي رافع
+                قال : صليت مع أبي هريرة العتمة فقرأ (إذا السماء انشقت) فسجد
+                فقلت: ما هذه؟ قال: سجدت بها خلف أبي القاسم فلا أزال أسجد بها حتى
+                ألقاه. (رواه البخاري ومسلم).
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                عن أبي هريرة أنه قال سجد رسول الله ﷺ في { إذا السماء انشقت } و {
+                اقرأ باسم ربك } . (رواه مسلم).
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                والسجود للتلاوة مستحب وليس بواجب . فعن زيد بن ثابت قال : قرأت
+                على النبي ﷺ والنجم فلم يسجد فيها. (رواه البخاري) .
+              </p>
+              <p
+                style="
+                  border-right: 3px solid #114b5f;
+                  border-bottom: 3px solid #114b5f;
+                  border-radius: 12px;
+                  margin: 15px;
+                  padding-right: 20px;
+                  padding-bottom: 10px;
+                "
+              >
+                ولا تشترط لسجود التلاوة الطهارة على الصحيح ، وليس فيه تسليم بعده
+                ، ولا تكبير عند الرفع منه ، على الصحيح أيضا .
+              </p>
+            </div>
+          </div>
+          <p class="conclusion">
+            { إِنَّهُ مَن يَتَّقِ وَيَصْبِرْ فَإِنَّ اللَّهَ لَا يُضِيعُ أَجْرَ
+            الْمُحْسِنِينَ }
+          </p>
+        </div>
+      </section>
+    </div>
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          const loader = document.getElementById("loaderOverlay");
+          loader.style.display = "none";
+          document.getElementById("mainContent").style.display = "block";
+        }, 3000);
+      });
+    </script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

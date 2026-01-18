@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>الفهرس</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html" class="active"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html" id="active">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="ابحث عن السور ......." />
+    </div>
+    <div id="noResults" class="no-results">❌ لا يوجد نتائج مطابقة لبحثك</div>
+    <div class="quran-list" id="quranList">
+      <a href="lemur/1.html" class="sura-link">
+        <div class="sura">
+          <div class="sura-name">1. الفاتحة</div>
+          <div class="sura-ayahs"><span>7</span></div>
+        </div>
+      </a>
+      <a href="lemur/2.html">
+        <div class="sura">
+          <div class="sura-name">2. البقرة</div>
+          <div class="sura-ayahs"><span>286</span></div>
+        </div>
+      </a>
+      <a href="lemur/3.html">
+        <div class="sura">
+          <div class="sura-name">3. آل عمران</div>
+          <div class="sura-ayahs"><span>200</span></div>
+        </div>
+      </a>
+      <a href="lemur/4.html">
+        <div class="sura">
+          <div class="sura-name">4. النساء</div>
+          <div class="sura-ayahs"><span>176</span></div>
+        </div>
+      </a>
+      <a href="lemur/5.html">
+        <div class="sura">
+          <div class="sura-name">5. المائدة</div>
+          <div class="sura-ayahs"><span>120</span></div>
+        </div>
+      </a>
+      <a href="lemur/6.html">
+        <div class="sura">
+          <div class="sura-name">6. الأنعام</div>
+          <div class="sura-ayahs"><span>165</span></div>
+        </div>
+      </a>
+      <a href="lemur/7.html">
+        <div class="sura">
+          <div class="sura-name">7. الأعراف</div>
+          <div class="sura-ayahs"><span>206</span></div>
+        </div>
+      </a>
+      <a href="lemur/8.html">
+        <div class="sura">
+          <div class="sura-name">8. الأنفال</div>
+          <div class="sura-ayahs"><span>75</span></div>
+        </div>
+      </a>
+      <a href="lemur/9.html">
+        <div class="sura">
+          <div class="sura-name">9. التوبة</div>
+          <div class="sura-ayahs"><span>129</span></div>
+        </div>
+      </a>
+      <a href="lemur/10.html">
+        <div class="sura">
+          <div class="sura-name">10. يونس</div>
+          <div class="sura-ayahs"><span>109</span></div>
+        </div>
+      </a>
+      <a href="lemur/11.html">
+        <div class="sura">
+          <div class="sura-name">11. هود</div>
+          <div class="sura-ayahs"><span>123</span></div>
+        </div>
+      </a>
+      <a href="lemur/12.html">
+        <div class="sura">
+          <div class="sura-name">12. يوسف</div>
+          <div class="sura-ayahs"><span>111</span></div>
+        </div>
+      </a>
+      <a href="lemur/13.html">
+        <div class="sura">
+          <div class="sura-name">13. الرعد</div>
+          <div class="sura-ayahs"><span>43</span></div>
+        </div>
+      </a>
+      <a href="lemur/14.html">
+        <div class="sura">
+          <div class="sura-name">14. إبراهيم</div>
+          <div class="sura-ayahs"><span>52</span></div>
+        </div>
+      </a>
+      <a href="lemur/15.html">
+        <div class="sura">
+          <div class="sura-name">15. الحجر</div>
+          <div class="sura-ayahs"><span>99</span></div>
+        </div>
+      </a>
+      <a href="lemur/16.html">
+        <div class="sura">
+          <div class="sura-name">16. النحل</div>
+          <div class="sura-ayahs"><span>128</span></div>
+        </div>
+      </a>
+      <a href="lemur/17.html">
+        <div class="sura">
+          <div class="sura-name">17. الإسراء</div>
+          <div class="sura-ayahs"><span>111</span></div>
+        </div>
+      </a>
+      <a href="lemur/18.html">
+        <div class="sura">
+          <div class="sura-name">18. الكهف</div>
+          <div class="sura-ayahs"><span>110</span></div>
+        </div>
+      </a>
+      <a href="lemur/19.html">
+        <div class="sura">
+          <div class="sura-name">19. مريم</div>
+          <div class="sura-ayahs"><span>98</span></div>
+        </div>
+      </a>
+      <a href="lemur/20.html">
+        <div class="sura">
+          <div class="sura-name">20. طه</div>
+          <div class="sura-ayahs"><span>135</span></div>
+        </div>
+      </a>
+      <a href="lemur/21.html">
+        <div class="sura">
+          <div class="sura-name">21. الأنبياء</div>
+          <div class="sura-ayahs"><span>112</span></div>
+        </div>
+      </a>
+      <a href="lemur/22.html">
+        <div class="sura">
+          <div class="sura-name">22. الحج</div>
+          <div class="sura-ayahs"><span>78</span></div>
+        </div>
+      </a>
+      <a href="lemur/23.html">
+        <div class="sura">
+          <div class="sura-name">23. المؤمنون</div>
+          <div class="sura-ayahs"><span>118</span></div>
+        </div>
+      </a>
+      <a href="lemur/24.html">
+        <div class="sura">
+          <div class="sura-name">24. النور</div>
+          <div class="sura-ayahs"><span>64</span></div>
+        </div>
+      </a>
+      <a href="lemur/25.html">
+        <div class="sura">
+          <div class="sura-name">25. الفرقان</div>
+          <div class="sura-ayahs"><span>77</span></div>
+        </div>
+      </a>
+      <a href="lemur/26.html">
+        <div class="sura">
+          <div class="sura-name">26. الشعراء</div>
+          <div class="sura-ayahs"><span>227</span></div>
+        </div>
+      </a>
+      <a href="lemur/27.html">
+        <div class="sura">
+          <div class="sura-name">27. النمل</div>
+          <div class="sura-ayahs"><span>93</span></div>
+        </div>
+      </a>
+      <a href="lemur/28.html">
+        <div class="sura">
+          <div class="sura-name">28. القصص</div>
+          <div class="sura-ayahs"><span>88</span></div>
+        </div>
+      </a>
+      <a href="lemur/29.html">
+        <div class="sura">
+          <div class="sura-name">29. العنكبوت</div>
+          <div class="sura-ayahs"><span>69</span></div>
+        </div>
+      </a>
+      <a href="lemur/30.html">
+        <div class="sura">
+          <div class="sura-name">30. الروم</div>
+          <div class="sura-ayahs"><span>60</span></div>
+        </div>
+      </a>
+      <a href="lemur/31.html">
+        <div class="sura">
+          <div class="sura-name">31. لقمان</div>
+          <div class="sura-ayahs"><span>34</span></div>
+        </div>
+      </a>
+      <a href="lemur/32.html">
+        <div class="sura">
+          <div class="sura-name">32. السجدة</div>
+          <div class="sura-ayahs"><span>30</span></div>
+        </div>
+      </a>
+      <a href="lemur/33.html">
+        <div class="sura">
+          <div class="sura-name">33. الأحزاب</div>
+          <div class="sura-ayahs"><span>73</span></div>
+        </div>
+      </a>
+      <a href="lemur/34.html">
+        <div class="sura">
+          <div class="sura-name">34. سبأ</div>
+          <div class="sura-ayahs"><span>54</span></div>
+        </div>
+      </a>
+      <a href="lemur/35.html">
+        <div class="sura">
+          <div class="sura-name">35. فاطر</div>
+          <div class="sura-ayahs"><span>45</span></div>
+        </div>
+      </a>
+      <a href="lemur/36.html">
+        <div class="sura">
+          <div class="sura-name">36. يس</div>
+          <div class="sura-ayahs"><span>83</span></div>
+        </div>
+      </a>
+      <a href="lemur/37.html">
+        <div class="sura">
+          <div class="sura-name">37. الصافات</div>
+          <div class="sura-ayahs"><span>182</span></div>
+        </div>
+      </a>
+      <a href="lemur/38.html">
+        <div class="sura">
+          <div class="sura-name">38. ص</div>
+          <div class="sura-ayahs"><span>88</span></div>
+        </div>
+      </a>
+      <a href="lemur/39.html">
+        <div class="sura">
+          <div class="sura-name">39. الزمر</div>
+          <div class="sura-ayahs"><span>75</span></div>
+        </div>
+      </a>
+      <a href="lemur/40.html">
+        <div class="sura">
+          <div class="sura-name">40. غافر</div>
+          <div class="sura-ayahs"><span>85</span></div>
+        </div>
+      </a>
+      <a href="lemur/41.html">
+        <div class="sura">
+          <div class="sura-name">41. فصلت</div>
+          <div class="sura-ayahs"><span>54</span></div>
+        </div>
+      </a>
+      <a href="lemur/42.html">
+        <div class="sura">
+          <div class="sura-name">42. الشورى</div>
+          <div class="sura-ayahs"><span>53</span></div>
+        </div>
+      </a>
+      <a href="lemur/43.html">
+        <div class="sura">
+          <div class="sura-name">43. الزخرف</div>
+          <div class="sura-ayahs"><span>89</span></div>
+        </div>
+      </a>
+      <a href="lemur/44.html">
+        <div class="sura">
+          <div class="sura-name">44. الدخان</div>
+          <div class="sura-ayahs"><span>59</span></div>
+        </div>
+      </a>
+      <a href="lemur/45.html">
+        <div class="sura">
+          <div class="sura-name">45. الجاثية</div>
+          <div class="sura-ayahs"><span>37</span></div>
+        </div>
+      </a>
+      <a href="lemur/46.html">
+        <div class="sura">
+          <div class="sura-name">46. الأحقاف</div>
+          <div class="sura-ayahs"><span>35</span></div>
+        </div>
+      </a>
+      <a href="lemur/47.html">
+        <div class="sura">
+          <div class="sura-name">47. محمد</div>
+          <div class="sura-ayahs"><span>38</span></div>
+        </div>
+      </a>
+      <a href="lemur/48.html">
+        <div class="sura">
+          <div class="sura-name">48. الفتح</div>
+          <div class="sura-ayahs"><span>29</span></div>
+        </div>
+      </a>
+      <a href="lemur/49.html">
+        <div class="sura">
+          <div class="sura-name">49. الحجرات</div>
+          <div class="sura-ayahs"><span>18</span></div>
+        </div>
+      </a>
+      <a href="lemur/50.html">
+        <div class="sura">
+          <div class="sura-name">50. ق</div>
+          <div class="sura-ayahs"><span>45</span></div>
+        </div>
+      </a>
+      <a href="lemur/51.html">
+        <div class="sura">
+          <div class="sura-name">51. الذاريات</div>
+          <div class="sura-ayahs"><span>60</span></div>
+        </div>
+      </a>
+      <a href="lemur/52.html">
+        <div class="sura">
+          <div class="sura-name">52. الطور</div>
+          <div class="sura-ayahs"><span>49</span></div>
+        </div>
+      </a>
+      <a href="lemur/53.html">
+        <div class="sura">
+          <div class="sura-name">53. النجم</div>
+          <div class="sura-ayahs"><span>62</span></div>
+        </div>
+      </a>
+      <a href="lemur/54.html">
+        <div class="sura">
+          <div class="sura-name">54. القمر</div>
+          <div class="sura-ayahs"><span>55</span></div>
+        </div>
+      </a>
+      <a href="lemur/55.html">
+        <div class="sura">
+          <div class="sura-name">55. الرحمن</div>
+          <div class="sura-ayahs"><span>78</span></div>
+        </div>
+      </a>
+      <a href="lemur/56.html">
+        <div class="sura">
+          <div class="sura-name">56. الواقعة</div>
+          <div class="sura-ayahs"><span>96</span></div>
+        </div>
+      </a>
+      <a href="lemur/57.html">
+        <div class="sura">
+          <div class="sura-name">57. الحديد</div>
+          <div class="sura-ayahs"><span>29</span></div>
+        </div>
+      </a>
+      <a href="lemur/58.html">
+        <div class="sura">
+          <div class="sura-name">58. المجادلة</div>
+          <div class="sura-ayahs"><span>22</span></div>
+        </div>
+      </a>
+      <a href="lemur/59.html">
+        <div class="sura">
+          <div class="sura-name">59. الحشر</div>
+          <div class="sura-ayahs"><span>24</span></div>
+        </div>
+      </a>
+      <a href="lemur/60.html">
+        <div class="sura">
+          <div class="sura-name">60. الممتحنة</div>
+          <div class="sura-ayahs"><span>13</span></div>
+        </div>
+      </a>
+      <a href="lemur/61.html">
+        <div class="sura">
+          <div class="sura-name">61. الصف</div>
+          <div class="sura-ayahs"><span>14</span></div>
+        </div>
+      </a>
+      <a href="lemur/62.html">
+        <div class="sura">
+          <div class="sura-name">62. الجمعة</div>
+          <div class="sura-ayahs"><span>11</span></div>
+        </div>
+      </a>
+      <a href="lemur/63.html">
+        <div class="sura">
+          <div class="sura-name">63. المنافقون</div>
+          <div class="sura-ayahs"><span>11</span></div>
+        </div>
+      </a>
+      <a href="lemur/64.html">
+        <div class="sura">
+          <div class="sura-name">64. التغابن</div>
+          <div class="sura-ayahs"><span>18</span></div>
+        </div>
+      </a>
+      <a href="lemur/65.html">
+        <div class="sura">
+          <div class="sura-name">65. الطلاق</div>
+          <div class="sura-ayahs"><span>12</span></div>
+        </div>
+      </a>
+      <a href="lemur/66.html">
+        <div class="sura">
+          <div class="sura-name">66. التحريم</div>
+          <div class="sura-ayahs"><span>12</span></div>
+        </div>
+      </a>
+      <a href="lemur/67.html">
+        <div class="sura">
+          <div class="sura-name">67. الملك</div>
+          <div class="sura-ayahs"><span>30</span></div>
+        </div>
+      </a>
+      <a href="lemur/68.html">
+        <div class="sura">
+          <div class="sura-name">68. القلم</div>
+          <div class="sura-ayahs"><span>52</span></div>
+        </div>
+      </a>
+      <a href="lemur/69.html">
+        <div class="sura">
+          <div class="sura-name">69. الحاقة</div>
+          <div class="sura-ayahs"><span>52</span></div>
+        </div>
+      </a>
+      <a href="lemur/70.html">
+        <div class="sura">
+          <div class="sura-name">70. المعارج</div>
+          <div class="sura-ayahs"><span>44</span></div>
+        </div>
+      </a>
+      <a href="lemur/71.html">
+        <div class="sura">
+          <div class="sura-name">71. نوح</div>
+          <div class="sura-ayahs"><span>28</span></div>
+        </div>
+      </a>
+      <a href="lemur/72.html">
+        <div class="sura">
+          <div class="sura-name">72. الجن</div>
+          <div class="sura-ayahs"><span>28</span></div>
+        </div>
+      </a>
+      <a href="lemur/73.html">
+        <div class="sura">
+          <div class="sura-name">73. المزمل</div>
+          <div class="sura-ayahs"><span>20</span></div>
+        </div>
+      </a>
+      <a href="lemur/74.html">
+        <div class="sura">
+          <div class="sura-name">74. المدثر</div>
+          <div class="sura-ayahs"><span>56</span></div>
+        </div>
+      </a>
+      <a href="lemur/75.html">
+        <div class="sura">
+          <div class="sura-name">75. القيامة</div>
+          <div class="sura-ayahs"><span>40</span></div>
+        </div>
+      </a>
+      <a href="lemur/76.html">
+        <div class="sura">
+          <div class="sura-name">76. الإنسان</div>
+          <div class="sura-ayahs"><span>31</span></div>
+        </div>
+      </a>
+      <a href="lemur/77.html">
+        <div class="sura">
+          <div class="sura-name">77. المرسلات</div>
+          <div class="sura-ayahs"><span>50</span></div>
+        </div>
+      </a>
+      <a href="lemur/78.html">
+        <div class="sura">
+          <div class="sura-name">78. النبأ</div>
+          <div class="sura-ayahs"><span>40</span></div>
+        </div>
+      </a>
+      <a href="lemur/79.html">
+        <div class="sura">
+          <div class="sura-name">79. النازعات</div>
+          <div class="sura-ayahs"><span>46</span></div>
+        </div>
+      </a>
+      <a href="lemur/80.html">
+        <div class="sura">
+          <div class="sura-name">80. عبس</div>
+          <div class="sura-ayahs"><span>42</span></div>
+        </div>
+      </a>
+      <a href="lemur/81.html">
+        <div class="sura">
+          <div class="sura-name">81. التكوير</div>
+          <div class="sura-ayahs"><span>29</span></div>
+        </div>
+      </a>
+      <a href="lemur/82.html">
+        <div class="sura">
+          <div class="sura-name">82. الإنفطار</div>
+          <div class="sura-ayahs"><span>19</span></div>
+        </div>
+      </a>
+      <a href="lemur/83.html">
+        <div class="sura">
+          <div class="sura-name">83. المطففين</div>
+          <div class="sura-ayahs"><span>36</span></div>
+        </div>
+      </a>
+      <a href="lemur/84.html">
+        <div class="sura">
+          <div class="sura-name">84. الانشقاق</div>
+          <div class="sura-ayahs"><span>25</span></div>
+        </div>
+      </a>
+      <a href="lemur/85.html">
+        <div class="sura">
+          <div class="sura-name">85. البروج</div>
+          <div class="sura-ayahs"><span>22</span></div>
+        </div>
+      </a>
+      <a href="lemur/86.html">
+        <div class="sura">
+          <div class="sura-name">86. الطارق</div>
+          <div class="sura-ayahs"><span>17</span></div>
+        </div>
+      </a>
+      <a href="lemur/87.html">
+        <div class="sura">
+          <div class="sura-name">87. الأعلى</div>
+          <div class="sura-ayahs"><span>19</span></div>
+        </div>
+      </a>
+      <a href="lemur/88.html">
+        <div class="sura">
+          <div class="sura-name">88. الغاشية</div>
+          <div class="sura-ayahs"><span>26</span></div>
+        </div>
+      </a>
+      <a href="lemur/89.html">
+        <div class="sura">
+          <div class="sura-name">89. الفجر</div>
+          <div class="sura-ayahs"><span>30</span></div>
+        </div>
+      </a>
+      <a href="lemur/90.html">
+        <div class="sura">
+          <div class="sura-name">90. البلد</div>
+          <div class="sura-ayahs"><span>20</span></div>
+        </div>
+      </a>
+      <a href="lemur/91.html">
+        <div class="sura">
+          <div class="sura-name">91. الشمس</div>
+          <div class="sura-ayahs"><span>15</span></div>
+        </div>
+      </a>
+      <a href="lemur/92.html">
+        <div class="sura">
+          <div class="sura-name">92. الليل</div>
+          <div class="sura-ayahs"><span>21</span></div>
+        </div>
+      </a>
+      <a href="lemur/93.html">
+        <div class="sura">
+          <div class="sura-name">93. الضحى</div>
+          <div class="sura-ayahs"><span>11</span></div>
+        </div>
+      </a>
+      <a href="lemur/94.html">
+        <div class="sura">
+          <div class="sura-name">94. الشرح</div>
+          <div class="sura-ayahs"><span>8</span></div>
+        </div>
+      </a>
+      <a href="lemur/95.html">
+        <div class="sura">
+          <div class="sura-name">95. التين</div>
+          <div class="sura-ayahs"><span>8</span></div>
+        </div>
+      </a>
+      <a href="lemur/96.html">
+        <div class="sura">
+          <div class="sura-name">96. العلق</div>
+          <div class="sura-ayahs"><span>19</span></div>
+        </div>
+      </a>
+      <a href="lemur/97.html">
+        <div class="sura">
+          <div class="sura-name">97. القدر</div>
+          <div class="sura-ayahs"><span>5</span></div>
+        </div>
+      </a>
+      <a href="lemur/98.html">
+        <div class="sura">
+          <div class="sura-name">98. البينة</div>
+          <div class="sura-ayahs"><span>8</span></div>
+        </div>
+      </a>
+      <a href="lemur/99.html">
+        <div class="sura">
+          <div class="sura-name">99. الزلزلة</div>
+          <div class="sura-ayahs"><span>8</span></div>
+        </div>
+      </a>
+      <a href="lemur/100.html">
+        <div class="sura">
+          <div class="sura-name">100. العاديات</div>
+          <div class="sura-ayahs"><span>11</span></div>
+        </div>
+      </a>
+      <a href="lemur/101.html">
+        <div class="sura">
+          <div class="sura-name">101. القارعة</div>
+          <div class="sura-ayahs"><span>11</span></div>
+        </div>
+      </a>
+      <a href="lemur/102.html">
+        <div class="sura">
+          <div class="sura-name">102. التكاثر</div>
+          <div class="sura-ayahs"><span>8</span></div>
+        </div>
+      </a>
+      <a href="lemur/103.html">
+        <div class="sura">
+          <div class="sura-name">103. العصر</div>
+          <div class="sura-ayahs"><span>3</span></div>
+        </div>
+      </a>
+      <a href="lemur/104.html">
+        <div class="sura">
+          <div class="sura-name">104. الهمزة</div>
+          <div class="sura-ayahs"><span>9</span></div>
+        </div>
+      </a>
+      <a href="lemur/105.html">
+        <div class="sura">
+          <div class="sura-name">105. الفيل</div>
+          <div class="sura-ayahs"><span>5</span></div>
+        </div>
+      </a>
+      <a href="lemur/106.html">
+        <div class="sura">
+          <div class="sura-name">106. قريش</div>
+          <div class="sura-ayahs"><span>4</span></div>
+        </div>
+      </a>
+      <a href="lemur/107.html">
+        <div class="sura">
+          <div class="sura-name">107. الماعون</div>
+          <div class="sura-ayahs"><span>7</span></div>
+        </div>
+      </a>
+      <a href="lemur/108.html">
+        <div class="sura">
+          <div class="sura-name">108. الكوثر</div>
+          <div class="sura-ayahs"><span>3</span></div>
+        </div>
+      </a>
+      <a href="lemur/109.html">
+        <div class="sura">
+          <div class="sura-name">109. الكافرون</div>
+          <div class="sura-ayahs"><span>6</span></div>
+        </div>
+      </a>
+      <a href="lemur/110.html">
+        <div class="sura">
+          <div class="sura-name">110. النصر</div>
+          <div class="sura-ayahs"><span>3</span></div>
+        </div>
+      </a>
+      <a href="lemur/111.html">
+        <div class="sura">
+          <div class="sura-name">111. المسد</div>
+          <div class="sura-ayahs"><span>5</span></div>
+        </div>
+      </a>
+      <a href="lemur/112.html">
+        <div class="sura">
+          <div class="sura-name">112. الإخلاص</div>
+          <div class="sura-ayahs"><span>4</span></div>
+        </div>
+      </a>
+      <a href="lemur/113.html">
+        <div class="sura">
+          <div class="sura-name">113. الفلق</div>
+          <div class="sura-ayahs"><span>5</span></div>
+        </div>
+      </a>
+      <a href="lemur/114.html">
+        <div class="sura">
+          <div class="sura-name">114. الناس</div>
+          <div class="sura-ayahs"><span>6</span></div>
+        </div>
+      </a>
+    </div>
+    <button id="scrollTopBtn" title="العودة للأعلى">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <div id="contextMenu" class="context-menu">
+      <button id="favBtn">
+        <i class="fa-solid fa-heart"></i>
+        إضافة إلى المفضلة
+      </button>
+    </div>
+    <div class="toast-container"></div>
+    <script>
+      function showToast(
+        type = "info",
+        title = "",
+        message = "",
+        duration = 3000
+      ) {
+        const toast = document.createElement("div");
+        toast.className = `toast ${type}`;
+
+        let icon = "";
+        switch (type) {
+          case "success":
+            icon = "fa-circle-check";
+            break;
+          case "error":
+            icon = "fa-circle-xmark";
+            break;
+          case "warning":
+            icon = "fa-triangle-exclamation";
+            break;
+          case "info":
+          default:
+            icon = "fa-circle-info";
+        }
+
+        toast.innerHTML = `
+        <div class="toast-icon">
+            <i class="fas ${icon}"></i>
+        </div>
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <button class="toast-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="toast-progress"></div>
+    `;
+
+        let container = document.querySelector(".toast-container");
+        if (!container) {
+          container = document.createElement("div");
+          container.className = "toast-container";
+          document.body.appendChild(container);
+        }
+
+        container.appendChild(toast);
+
+        toast.querySelector(".toast-close").onclick = () => closeToast(toast);
+
+        const progress = toast.querySelector(".toast-progress");
+        progress.style.animation = `progress-shrink ${
+          duration / 1000
+        }s linear forwards`;
+
+        setTimeout(() => closeToast(toast), duration);
+        setTimeout(() => toast.classList.add("show"), 10);
+      }
+
+      function closeToast(toast) {
+        toast.classList.remove("show");
+        setTimeout(() => {
+          if (toast.parentElement) toast.remove();
+        }, 300);
+      }
+
+      /* Progress animation */
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes progress-shrink {
+            from { transform: scaleX(1); }
+            to { transform: scaleX(0); }
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+    <script>
+      const menuFavourite = document.getElementById("contextMenu");
+      const favBtn = document.getElementById("favBtn");
+      let currentLink = null;
+      let touchTimer;
+
+      document.querySelectorAll(".quran-list a").forEach((link) => {
+        link.addEventListener("contextmenu", (e) => {
+          e.preventDefault();
+          showMenu(e.clientX, e.clientY, link);
+        });
+
+        link.addEventListener("touchstart", (e) => {
+          touchTimer = setTimeout(() => {
+            const touch = e.touches[0];
+            showMenu(touch.clientX, touch.clientY, link);
+          }, 800);
+        });
+
+        link.addEventListener("touchend", () => {
+          clearTimeout(touchTimer);
+        });
+      });
+
+      function showMenu(x, y, link) {
+        currentLink = link;
+
+        menuFavourite.style.display = "block";
+        menuFavourite.style.top = y + "px";
+        menuFavourite.style.left = x + "px";
+      }
+
+      document.addEventListener("click", () => {
+        menuFavourite.style.display = "none";
+      });
+
+      favBtn.addEventListener("click", () => {
+        if (!currentLink) return;
+
+        const suraName = currentLink.querySelector(".sura-name").innerText;
+        const suraAyahs =
+          currentLink.querySelector(".sura-ayahs span").innerText;
+        const suraHref = currentLink.getAttribute("href");
+
+        const favItem = {
+          name: suraName,
+          ayahs: suraAyahs,
+          link: suraHref,
+        };
+
+        const confirmAdd = confirm(
+          `هل أنت متأكد من إضافة "${suraName}" رقم ${suraAyahs} إلى المفضلة ؟`
+        );
+        if (!confirmAdd) return;
+
+        let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+        const exists = favourites.some((item) => item.link === suraHref);
+        if (!exists) {
+          favourites.push(favItem);
+          localStorage.setItem("favourites", JSON.stringify(favourites));
+
+          showToast(
+            "success",
+            "تمت الإضافة",
+            `تم إضافة سورة ${suraName} إلى المفضلة`
+          );
+        } else {
+          showToast(
+            "error",
+            "موجودة بالفعل",
+            `سورة ${suraName} موجودة في المفضلة ⚠️`
+          );
+        }
+
+        menuFavourite.style.display = "none";
+      });
+    </script>
+    <script>
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script>
+      const searchInput = document.getElementById("search");
+      const quranLinks = document.querySelectorAll(".quran-list a");
+      const noResults = document.getElementById("noResults");
+
+      searchInput.addEventListener("input", function () {
+        const filter = searchInput.value.trim().toLowerCase();
+        let matches = 0;
+
+        quranLinks.forEach((link) => {
+          const name = link.querySelector(".sura-name").innerText.toLowerCase();
+
+          if (name.includes(filter)) {
+            link.style.display = "block";
+            link.style.order = filter === "" ? "0" : "-1";
+            matches++;
+          } else {
+            link.style.display = "none";
+          }
+        });
+
+        noResults.style.display =
+          matches === 0 && filter !== "" ? "block" : "none";
+      });
+    </script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

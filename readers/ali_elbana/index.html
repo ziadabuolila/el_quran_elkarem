@@ -1,0 +1,2805 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="../../img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="../../css/all.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="manifest" href="../../manifest.json" />
+    <title>الشيخ محمود علي البنا</title>
+  </head>
+
+  <body class="loading">
+    <div id="loading">برجاء الانتظار .... <span>جار التحميل</span></div>
+    <div id="offlineOverlay">
+      <div class="offlineBox" id="offlineBox">
+        🚫 لا يوجد اتصال بالإنترنت .... برجاء الاتصال بالانترنت اولا
+      </div>
+    </div>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="../../img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="../../index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="../../indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="../../music.html" class="active"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="../../sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="../../supplications_et_souvenirs.html">
+                ادعيه و اذكار
+              </a>
+            </li>
+            <li>
+              <a href="../../chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="../../times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="../../supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="../../favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="../../calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="../../library_section.html">مقالات</a>
+            </li>
+            <li>
+              <a href="../../wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="../../img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="../../index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="../../indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="../../music.html" id="active">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="../../sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="../../supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="../../chapelet.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="../../times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="../../supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="../../favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="../../calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="../../library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="../../wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="ابحث عن السور ......." />
+    </div>
+    <div id="noResults" class="no-results">❌ لا يوجد نتائج مطابقة لبحثك</div>
+    <div class="audio" id="audioContainer">
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الفاتحة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الفاتحة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/001.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة البقرة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة البقرة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/002.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة آل عمران بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة آل عمران كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/003.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النساء بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النساء كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/004.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المائدة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المائدة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/005.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأنعام بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأنعام كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/006.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأعراف بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأعراف كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/007.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأنفال بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأنفال كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/008.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة التوبة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة التوبة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/009.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة يونس بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة يونس كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/010.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة هود بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة هود كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/011.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة يوسف بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة يوسف كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/012.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الرعد بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الرعد كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/013.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة إبراهيم بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة إبراهيم كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/014.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الحجر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الحجر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/015.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النحل بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النحل كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/016.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الإسراء بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الإسراء كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/017.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الكهف بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الكهف كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/018.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة مريم بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة مريم كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/019.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة طه بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة طه كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/020.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأنبياء بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأنبياء كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/021.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الحج بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الحج كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/022.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المؤمنون بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المؤمنون كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/023.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النور بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النور كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/024.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الفرقان بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الفرقان كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/025.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الشعراء بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الشعراء كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/026.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النمل بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النمل كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/027.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة القصص بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة القصص كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/028.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة العنكبوت بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة العنكبوت كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/029.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الروم بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الروم كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/030.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة لقمان بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة لقمان كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/031.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة السجدة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة السجدة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/032.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأحزاب بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأحزاب كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/033.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة سبأ بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة سبأ كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/034.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة فاطر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة فاطر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/035.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة يس بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة يس كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/036.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الصافات بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الصافات كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/037.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة ص بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة ص كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي البنا،
+              استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/038.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الزمر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الزمر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/039.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة غافر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة غافر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/040.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة فصلت بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة فصلت كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/041.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الشورى بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الشورى كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/042.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الزخرف بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الزخرف كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/043.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الدخان بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الدخان كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/044.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الجاثية بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الجاثية كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/045.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأحقاف بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأحقاف كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/046.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة محمد بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة محمد كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/047.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الفتح بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الفتح كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/048.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الحجرات بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الحجرات كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/049.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة ق بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة ق كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي البنا،
+              استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/050.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الذاريات بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الذاريات كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/051.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الطور بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الطور كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/052.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النجم بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النجم كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/053.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة القمر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة القمر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/054.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الرحمن بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الرحمن كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/055.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الواقعة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الواقعة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/056.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الحديد بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الحديد كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/057.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المجادلة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المجادلة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/058.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الحشر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الحشر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/059.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الممتحنة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الممتحنة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/060.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الصف بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الصف كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/061.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الجمعة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الجمعة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/062.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المنافقون بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المنافقون كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود
+              علي البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3
+              برابط مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/063.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة التغابن بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة التغابن كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/064.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الطلاق بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الطلاق كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/065.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة التحريم بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة التحريم كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/066.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الملك بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الملك كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/067.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة القلم بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة القلم كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/068.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الحاقة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الحاقة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/069.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المعارج بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المعارج كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/070.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة نوح بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة نوح كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/071.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الجن بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الجن كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/072.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المزمل بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المزمل كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/073.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المدثر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المدثر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/074.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة القيامة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة القيامة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/075.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الإنسان بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الإنسان كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/076.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المرسلات بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المرسلات كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/077.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النبأ بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النبأ كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/078.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النازعات بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النازعات كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/079.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة عبس بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة عبس كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/080.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة التكوير بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة التكوير كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/081.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الإنفطار بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الإنفطار كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/082.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المطففين بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المطففين كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/083.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الانشقاق بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الانشقاق كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/084.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة البروج بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة البروج كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/085.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الطارق بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الطارق كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/086.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الأعلى بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الأعلى كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/087.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الغاشية بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الغاشية كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/088.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الفجر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الفجر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/089.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة البلد بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة البلد كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/090.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الشمس بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الشمس كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/091.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الليل بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الليل كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/092.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الضحى بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الضحى كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/093.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الشرح بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الشرح كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/094.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة التين بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة التين كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/095.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة العلق بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة العلق كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/096.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة القدر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة القدر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/097.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة البينة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة البينة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/098.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الزلزلة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الزلزلة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/099.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة العاديات بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة العاديات كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/100.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة القارعة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة القارعة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/101.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة التكاثر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة التكاثر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/102.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة العصر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة العصر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/103.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الهمزة بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الهمزة كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/104.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الفيل بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الفيل كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/105.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة قريش بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة قريش كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/106.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الماعون بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الماعون كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/107.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الكوثر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الكوثر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/108.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الكافرون بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الكافرون كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/109.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة النصر بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة النصر كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/110.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة المسد بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة المسد كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/111.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الإخلاص بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الإخلاص كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/112.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الفلق بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الفلق كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/113.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>القرآن الكريم سورة الناس بصوت :</h3>
+            <h2>الشيخ محمود علي البنا</h2>
+            <p>
+              سورة الناس كاملة برواية حفص عن عاصم بصوت القارئ الشيخ محمود علي
+              البنا، استماع أون لاين مع إمكانية التحميل بصيغة صوتية mp3 برابط
+              مباشر.
+            </p>
+          </div>
+          <div class="card-img">
+            <img src="img/elbana.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source
+            src="https://archive.org/download/golmami2005_yahoo_002_20180411_2112/114.mp3"
+            type="audio/mpeg "
+          />
+        </audio>
+      </div>
+    </div>
+    <button id="scrollTopBtn" title="العودة للأعلى">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+    <script>
+      const offlineOverlay = document.getElementById("offlineOverlay");
+      const offlineBox = document.getElementById("offlineBox");
+      let hideTimer;
+      let wasOffline = false; // 👈 أهم سطر
+
+      function checkInternet() {
+        if (navigator.onLine) {
+          document.body.style.pointerEvents = "auto";
+
+          // لو النت كان فاصل قبل كده
+          if (wasOffline) {
+            offlineBox.textContent = "✅ تم الاتصال بالإنترنت بنجاح";
+            offlineBox.classList.add("online");
+
+            offlineOverlay.style.display = "flex";
+            setTimeout(() => offlineOverlay.classList.add("show"), 10);
+
+            hideTimer = setTimeout(() => {
+              offlineOverlay.classList.remove("show");
+              setTimeout(() => {
+                offlineOverlay.style.display = "none";
+                offlineBox.classList.remove("online");
+              }, 400);
+            }, 1500);
+
+            wasOffline = false;
+          } else {
+            // النت شغال من الأول → مفيش رسالة
+            offlineOverlay.style.display = "none";
+          }
+        } else {
+          // لا يوجد اتصال
+          clearTimeout(hideTimer);
+          wasOffline = true;
+
+          offlineBox.textContent =
+            "🚫 لا يوجد اتصال بالإنترنت .... برجاء الاتصال بالانترنت اولا";
+          offlineBox.classList.remove("online");
+
+          offlineOverlay.style.display = "flex";
+          setTimeout(() => offlineOverlay.classList.add("show"), 10);
+
+          document.body.style.pointerEvents = "none";
+          offlineOverlay.style.pointerEvents = "auto";
+        }
+      }
+
+      window.addEventListener("load", checkInternet);
+      window.addEventListener("online", checkInternet);
+      window.addEventListener("offline", checkInternet);
+    </script>
+    <script>
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollTopBtn.style.display = "block";
+        } else {
+          scrollTopBtn.style.display = "none";
+        }
+      };
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script>
+      const searchInput = document.getElementById("search");
+      const audioContainer = document.getElementById("audioContainer");
+      const cards = audioContainer.getElementsByClassName("card_audio");
+      const noResults = document.getElementById("noResults");
+      searchInput.addEventListener("keyup", function () {
+        let filter = searchInput.value.trim().toLowerCase();
+        let count = 0;
+        for (let i = 0; i < cards.length; i++) {
+          let suraTitle = cards[i].querySelector("h3").innerText.toLowerCase();
+          let sheikhName = cards[i].querySelector("h2").innerText.toLowerCase();
+          if (suraTitle.includes(filter) || sheikhName.includes(filter)) {
+            cards[i].style.display = "block";
+            count++;
+          } else {
+            cards[i].style.display = "none";
+          }
+        }
+        if (count === 0) {
+          noResults.style.display = "block";
+        } else {
+          noResults.style.display = "none";
+        }
+        if (count === 1) {
+          for (let i = 0; i < cards.length; i++) {
+            if (cards[i].style.display === "block") {
+              cards[i].style.display = "block";
+            } else {
+              cards[i].style.display = "none";
+            }
+          }
+        }
+      });
+    </script>
+    <script src="../../js/jquery-3.7.0.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/all.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("../../js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

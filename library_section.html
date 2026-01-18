@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>كتب و مقالات</title>
+  </head>
+
+  <body>
+    <style>
+      .library-section {
+        padding: 100px 20px;
+      }
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 22px;
+      }
+
+      .content-card {
+        background: #fff;
+        border-radius: 22px;
+        padding: 25px 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+        transition: 0.4s;
+        text-align: center;
+      }
+
+      .content-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .card-icon {
+        font-size: 36px;
+        color: #114b5f;
+        margin-bottom: 12px;
+      }
+
+      .content-card h3 {
+        color: #114b5f;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .content-card p {
+        font-size: 13px;
+        color: #8b8b8b;
+        line-height: 1.7;
+      }
+
+      .btn-read,
+      .btn-download {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 8px 22px;
+        border-radius: 22px;
+        background: #114b5f;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 13px;
+        text-decoration: none;
+      }
+
+      .btn-read:hover,
+      .btn-download:hover {
+        background: #0d3e4a;
+      }
+    </style>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html" class="active"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html" id="active">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <section class="library-section">
+
+      <div class="tab-content active" id="articles">
+        <div class="cards-grid">
+          <div class="content-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-book-quran"></i>
+            </div>
+            <h3>فضل سورة الكهف</h3>
+            <p>سورة عظيمة تُنير ما بين الجمعتين وتحفظ من الفتن.</p>
+            <a href="book_quran.html">
+              <button class="btn-read">اقرأ المقال</button>
+            </a>
+          </div>
+
+          <div class="content-card">
+            <div class="card-icon"><i class="fa-solid fa-mosque"></i></div>
+            <h3>قصة سيدنا يوسف</h3>
+            <p>قصة الصبر والعفة والإيمان بالله.</p>
+            <a href="book_prophet.html">
+              <button class="btn-read">اقرأ المقال</button>
+            </a>
+          </div>
+
+          <div class="content-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-star-and-crescent"></i>
+            </div>
+            <h3>آداب تلاوة القرآن</h3>
+            <p>كيف نقرأ القرآن كما أُنزِل.</p>
+            <a href="quran_recitation.html">
+              <button class="btn-read">اقرأ المقال</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          contents.forEach((c) => c.classList.remove("active"));
+
+          tab.classList.add("active");
+          document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+      });
+    </script>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

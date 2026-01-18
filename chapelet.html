@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>السبحة</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html" class="active"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html" id="active">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="tasbeehType">
+      <div class="sebha">
+        <button id="muteBtn">🔊</button>
+        <div id="zekrText"></div>
+
+        <input
+          type="text"
+          id="zekrInput"
+          placeholder="اكتب الذكر هنا"
+          oninput="this.value = this.value.replace(/[^a-zA-Z\u0600-\u06FF\s]/g, '')"
+        />
+
+        <div id="inputArea">
+          <input
+            type="number"
+            id="countInput"
+            placeholder="اكتب عدد مرات التسبيح"
+          />
+          <div class="btns_sebha">
+            <button id="favToggleBtn" class="btn-tasbeeh tasbeeh_sebha">
+              إضافة ذكر من المفضلة
+            </button>
+            <button
+              class="btn-tasbeeh chapelet_tasbeeh_sebha"
+              onclick="
+                const zekrVal = document.getElementById('zekrInput').value.trim();
+                const countVal = document.getElementById('countInput').value.trim();
+                if (!zekrVal || !countVal || parseInt(countVal) <= 0) {
+                  alert('برجاء ملء اسم الذكر وعدد التسبيح أولاً');
+                } else {
+                  // اظهار النص النهائي
+                  document.getElementById('zekrText').textContent = zekrVal;
+                  document.getElementById('zekrText').style.display = 'block';
+                  // اخفاء input
+                  document.getElementById('zekrInput').style.display = 'none';
+                  // تفعيل العد
+                  activateSebha();
+                }
+              "
+            >
+              تفعيل
+            </button>
+          </div>
+        </div>
+
+        <div id="tasbeehArea" style="display: none">
+          <div class="count" id="count">0</div>
+          <div class="btns_sebha">
+            <button class="btn-tasbeeh tasbeeh_sebha" onclick="tasbeeh()">
+              تسبيح
+            </button>
+            <button class="btn-reset tasbeeh_sebha" onclick="resetCount()">
+              إعادة
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="limitMessage"
+          style="
+            display: none;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 15px;
+          "
+        ></div>
+      </div>
+    </div>
+    <div class="fav-wrapper" id="favWrapper" style="display: none">
+      <div class="fav-box">
+        <h3 class="fav-title">الأذكار المفضلة</h3>
+        <div class="fav-list" id="favList"></div>
+      </div>
+    </div>
+
+    <script>
+      const azkar = [
+        "سبحان الله",
+        "سبحان الله و بحمده",
+        "سبحان الله و الحمد لله",
+        "سبحان الله العظيم و بحمده",
+        "سبحان الله و بحمده , سبحان الله العظيم",
+        "لا إله إلا الله , له الملك و له الحمد و هو علي كل شئ قدير",
+        "لا حول و لا قوة إلا بالله",
+        "الحمدلله رب العالمين",
+        "اللهم صلي وسلم و بارك علي سيدنا محمد",
+        "استغفر الله",
+        "سبحان الله ,والحمدلله , ولا إله إلا الله , والله و اكبر",
+        "لا إله إلا الله",
+        "الله و اكبر",
+        "سبحان الله , والحمدلله , ولا إله إلا الله , والله اكبر , اللهم اغفر لي , اللهم ارحمني , اللهم ارزقني",
+        "الحمدلله لله حمدا كثيرا طيبامباركا فيه",
+        "الله اكبر كبيرا , والحمدلله كثيرا , وسبحان الله بكرة و اصيلا",
+        "اللهم صلي ي محمد و علي ال محمد كما صليت علي ابراهيم , و علي ال ابراهيم إنك حميد مجيد , اللهم بارك علي محمد و علي ال محمد كما باركت علي ابراهيم و علي ال ابراهيم إنك حميد مجيد",
+        "لا إله إلا انت سبحانك أني كنت من الظالمين",
+      ];
+
+      let currentIndex = 0;
+      let count = 0;
+      let maxCount = 0;
+
+      const countEl = document.getElementById("count");
+      const inputArea = document.getElementById("inputArea");
+      const tasbeehArea = document.getElementById("tasbeehArea");
+      const limitMessage = document.getElementById("limitMessage");
+      const countInput = document.getElementById("countInput");
+      const muteBtn = document.getElementById("muteBtn");
+
+      const alertSound = new Audio(
+        "https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"
+      );
+      alertSound.loop = true;
+      alertSound.volume = 0.8;
+
+      let isMuted = localStorage.getItem("isMuted") === "true";
+
+      function updateMuteButton() {
+        muteBtn.textContent = isMuted ? "🔇" : "🔊";
+      }
+      updateMuteButton();
+
+      muteBtn.addEventListener("click", () => {
+        isMuted = !isMuted;
+        localStorage.setItem("isMuted", isMuted);
+        updateMuteButton();
+        if (isMuted) {
+          alertSound.pause();
+          alertSound.currentTime = 0;
+        }
+      });
+
+      function activateSebha() {
+        maxCount = parseInt(countInput.value);
+        if (!maxCount || maxCount <= 0) {
+          alert("من فضلك أدخل عدد صحيح أكبر من صفر");
+          return;
+        }
+        localStorage.setItem("tasbeehLimit", maxCount);
+        inputArea.style.display = "none";
+        tasbeehArea.style.display = "block";
+        count = 0;
+        countEl.textContent = count;
+      }
+
+      function tasbeeh() {
+        if (count < maxCount) {
+          count++;
+          countEl.textContent = count;
+          countEl.style.transform = "scale(0.8)";
+          setTimeout(() => (countEl.style.transform = "scale(1)"), 150);
+
+          if (count === maxCount) {
+            showLimitMessage();
+          }
+        }
+      }
+
+      function resetCount() {
+        count = 0;
+        countEl.textContent = count;
+      }
+
+      function showLimitMessage() {
+        limitMessage.textContent =
+          "لقد وصلت الي الحد الاقصي من عدد مرات هذا التسبيح";
+        limitMessage.style.display = "block";
+
+        if (navigator.vibrate) {
+          navigator.vibrate([150, 80, 150, 80, 150]);
+        }
+
+        if (!isMuted) {
+          alertSound.currentTime = 0;
+          alertSound.play();
+        }
+
+        setTimeout(() => {
+          alertSound.pause();
+          alertSound.currentTime = 0;
+
+          limitMessage.style.display = "none";
+          tasbeehArea.style.display = "none";
+          inputArea.style.display = "block";
+          document.getElementById("zekrInput").style.display = "block";
+          document.getElementById("zekrText").style.display = "none";
+          countInput.value = "";
+        }, 5000);
+        setTimeout(() => {
+          alertSound.pause();
+          alertSound.currentTime = 0;
+          location.reload();
+        }, 5000);
+      }
+    </script>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      const favBtn = document.getElementById("favToggleBtn");
+      const favWrapper = document.getElementById("favWrapper");
+      const favList = document.getElementById("favList");
+
+      let favorites = JSON.parse(localStorage.getItem("favAzkar")) || [];
+
+      function saveFavorites() {
+        localStorage.setItem("favAzkar", JSON.stringify(favorites));
+        toggleFavBtn();
+      }
+
+      function toggleFavBtn() {
+        favBtn.style.display = favorites.length ? "block" : "none";
+      }
+
+      function renderFavorites() {
+        favList.innerHTML = "";
+        favorites.forEach((zekr, index) => {
+          const item = document.createElement("div");
+          item.className = "fav-item";
+          item.innerHTML = `
+            <span class="fav-text">${zekr}</span>
+            <div class="fav-actions">
+              <button
+                class="fav-use-btn"
+                onclick="useFavZekr('${zekr.replace(/'/g, "\\'")}')"
+              >
+                إضافه
+              </button>
+              <button
+                class="fav-remove-btn"
+                onclick="removeFav(${index})"
+              >
+                حذف
+              </button>
+            </div>
+          `;
+          favList.appendChild(item);
+        });
+      }
+
+      function removeFav(index) {
+        favorites.splice(index, 1);
+        saveFavorites();
+        renderFavorites();
+      }
+
+      favBtn.addEventListener("click", () => {
+        favWrapper.style.display = "flex";
+        renderFavorites();
+      });
+
+      favWrapper.addEventListener("click", (e) => {
+        if (e.target === favWrapper) {
+          favWrapper.style.display = "none";
+        }
+      });
+
+      /* ===== إضافة الذكر بعد الانتهاء ===== */
+      function addToFavorites(zekr) {
+        if (!favorites.includes(zekr)) {
+          favorites.push(zekr);
+          saveFavorites();
+        }
+      }
+
+      toggleFavBtn();
+
+      /* عدل دالة showLimitMessage */
+      const originalShowLimit = showLimitMessage;
+      showLimitMessage = function () {
+        addToFavorites(document.getElementById("zekrText").textContent);
+        favBtn.style.display = "block";
+        originalShowLimit();
+      };
+      function useFavZekr(zekr) {
+        const zekrInput = document.getElementById("zekrInput");
+
+        zekrInput.value = zekr;
+        zekrInput.focus();
+
+        favWrapper.style.display = "none";
+      }
+    </script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>

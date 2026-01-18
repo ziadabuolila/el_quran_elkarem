@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007bff" />
+    <link rel="icon" href="img/El_Quran_Elkarem_icon.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>الصفحة الرئيسية</title>
+  </head>
+
+  <body>
+    <style>
+      .audio {
+        padding: 100px 0 40px 0;
+      }
+    </style>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <h1>القرآن الكريم</h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="index.html"> الصفحة الرئيسية </a>
+            </li>
+            <li>
+              <a href="indice.html"> فهرس السور </a>
+            </li>
+            <li>
+              <a href="music.html"> التلاوات الصوتية </a>
+            </li>
+            <li>
+              <a href="sceau_du_coran.html"> ختمه القرءان </a>
+            </li>
+            <li>
+              <a href="supplications_et_souvenirs.html"> ادعيه و اذكار </a>
+            </li>
+            <li>
+              <a href="chapelet.html"> السبحة </a>
+            </li>
+            <li>
+              <a href="times.html"> مواقيت الصلاة </a>
+            </li>
+            <li>
+              <a href="supplications.html" class="active"> ابتهالات</a>
+            </li>
+            <li>
+              <a href="favourite.html"> المفضلة</a>
+            </li>
+            <li>
+              <a href="calendar.html"> التقويم</a>
+            </li>
+            <li>
+              <a href="library_section.html"> مقالات</a>
+            </li>
+            <li>
+              <a href="wards.html"> الورد اليومي</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <div class="menu" id="menu">
+      <div class="menu-header">
+        <div class="logo">
+          <img
+            src="img/El_Quran_Elkarem_logo.jpg"
+            alt="القرآن الكريم"
+            draggable="false"
+          />
+          <p>القرءان الكريم</p>
+        </div>
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <span>الصفحة الرئيسية</span>
+          </li>
+        </a>
+        <a href="indice.html">
+          <li>
+            <i class="fa-solid fa-list"></i>
+            <span>فهرس السور</span>
+          </li>
+        </a>
+        <a href="music.html">
+          <li>
+            <i class="fa-solid fa-headphones"></i>
+            <span>التلاوات الصوتية</span>
+          </li>
+        </a>
+        <a href="sceau_du_coran.html">
+          <li>
+            <i class="fa-solid fa-mosque"></i>
+            <span>ختمه القرآن</span>
+          </li>
+        </a>
+        <a href="supplications_et_souvenirs.html">
+          <li>
+            <i class="fa-solid fa-hands-praying"></i>
+            <span>أدعية وأذكار</span>
+          </li>
+        </a>
+        <a href="chapelet.html">
+          <li>
+            <i class="fas fa-circle-dot"></i>
+            <span>السبحة</span>
+          </li>
+        </a>
+        <a href="times.html">
+          <li>
+            <i class="fas fa-mosque"></i>
+            <span>مواقيت الصلاة</span>
+          </li>
+        </a>
+        <a href="supplications.html" id="active">
+          <li>
+            <i class="fas fa-volume-up"></i>
+            <span>ابتهالات</span>
+          </li>
+        </a>
+        <a href="favourite.html">
+          <li>
+            <i class="fas fa-heart"></i>
+            <span>المفضلة</span>
+          </li>
+        </a>
+        <a href="calendar.html">
+          <li>
+            <i class="fas fa-calendar"></i>
+            <span>التقويم</span>
+          </li>
+        </a>
+        <a href="library_section.html">
+          <li>
+            <i class="fas fa-file-text"></i>
+            <span>مقالات</span>
+          </li>
+        </a>
+        <a href="wards.html">
+          <li>
+            <i class="fas fa-book-open"></i>
+            <span>الورد اليومي</span>
+          </li>
+        </a>
+      </ul>
+    </div>
+    <div class="audio" id="audioContainer">
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال أغيب و ذو اللطائف لا يغيب</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/1.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال يا نور كل شئ و هداه</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/2.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال واجب الخيري للخليقه سبحانك</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/3.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال يا مجيب السائلين</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/4.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال مولاي اني ببابك</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/5.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال ربي هب لي هدى و أطلق لساني</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/6.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال يا قديرا يا من له ما يشاء</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/7.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال تبتلت مشتاقا الي الله</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/8.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال قبضه الله تجمع الارض جمعا</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/9.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال ماشي بنور الله</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/10.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+      <div class="card_audio">
+        <div class="card-content">
+          <div class="card-text">
+            <h3>ابتهالات بصوت :</h3>
+            <h2>سيد محمد النقشبندي</h2>
+            <p>ابتهال النفس تشكوا و من يدري بما فيها</p>
+          </div>
+          <div class="card-img">
+            <img src="img/elnakshabandy.jpg" alt="الشيخ " />
+          </div>
+        </div>
+        <audio controls>
+          <source src="supplications/11.mp3" type="audio/mpeg " />
+        </audio>
+      </div>
+    </div>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("js/sw.js")
+          .then((reg) => console.log("Service Worker registered:", reg))
+          .catch((err) =>
+            console.log("Service Worker registration failed:", err)
+          );
+      }
+    </script>
+  </body>
+</html>
