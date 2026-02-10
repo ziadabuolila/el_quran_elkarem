@@ -1891,7 +1891,6 @@ button.zekr-btn:hover {
   box-shadow: 0 0 20px rgba(45, 255, 106, 0.6);
 }
 .btn-tasbeeh.tasbeeh_sebha{
-    display: none;
     padding: 12px 20px;
     border-radius: 12px;
     background: linear-gradient(90deg, #114b5f, #8b8b8b);

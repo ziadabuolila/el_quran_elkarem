@@ -161,14 +161,12 @@
       <div class="sebha">
         <button id="muteBtn">🔊</button>
         <div id="zekrText"></div>
-
         <input
           type="text"
           id="zekrInput"
           placeholder="اكتب الذكر هنا"
           oninput="this.value = this.value.replace(/[^a-zA-Z\u0600-\u06FF\s]/g, '')"
         />
-
         <div id="inputArea">
           <input
             type="number"
@@ -201,7 +199,6 @@
             </button>
           </div>
         </div>
-
         <div id="tasbeehArea" style="display: none">
           <div class="count" id="count">0</div>
           <div class="btns_sebha">
@@ -213,7 +210,6 @@
             </button>
           </div>
         </div>
-
         <div
           id="limitMessage"
           style="
@@ -231,7 +227,6 @@
         <div class="fav-list" id="favList"></div>
       </div>
     </div>
-
     <script>
       const azkar = [
         "سبحان الله",
@@ -351,11 +346,6 @@
         }, 5000);
       }
     </script>
-
-    <script src="js/jquery-3.7.0.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/all.min.js"></script>
-    <script src="js/main.js"></script>
     <script>
       const favBtn = document.getElementById("favToggleBtn");
       const favWrapper = document.getElementById("favWrapper");
@@ -441,6 +431,11 @@
         favWrapper.style.display = "none";
       }
     </script>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
 
     <script>
       if ("serviceWorker" in navigator) {
