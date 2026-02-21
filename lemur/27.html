@@ -161,22 +161,45 @@
         </a>
       </ul>
     </div>
-    <div class="share-box">
-      <button class="share-main">
-        <i class="fas fa-share-alt"></i>
-      </button>
-      <div class="share-menu">
-        <a href="#" class="whatsapp" id="shareWhatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="#" class="facebook" id="shareFacebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="telegram" id="shareTelegram">
-          <i class="fab fa-telegram-plane"></i>
-        </a>
+  <!-- زر الفتح -->
+  <div class="share-box select">
+    <button class="share-main" id="openModalBtn">
+      <i class="fa-solid fa-square-check"></i>
+    </button>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay-blur" id="customModal">
+    <div class="modal-content-box">
+
+      <div class="custom custom-modal">
+        <input type="number" id="searchInput" class="input-custom" placeholder="اكتب رقم الآية اللتي تم الوقوف عليها" />
+        <button id="saveBtn" class="btn-custom">حفظ</button>
+        <button type="reset" id="clearBtn" class="btn-custom btn-clear">
+          مسح
+        </button>
       </div>
+
+      <div id="message" class="message"></div>
+
     </div>
+  </div>
+  <div class="share-box">
+    <button class="share-main">
+      <i class="fas fa-share-alt"></i>
+    </button>
+    <div class="share-menu">
+      <a href="#" class="whatsapp" id="shareWhatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="#" class="facebook" id="shareFacebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="telegram" id="shareTelegram">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+    </div>
+  </div>
     <div class="info">
       <div class="sura-card">
         <div class="sura-header">
@@ -516,8 +539,23 @@
       </div>
     </div>
     <button id="scrollTopBtn" title="العودة للأعلى">
-      <i class="fa-solid fa-angle-up"></i>
-    </button>
+    <i class="fa-solid fa-angle-up"></i>
+  </button>
+  <script>
+    const openBtn = document.getElementById("openModalBtn");
+    const modal = document.getElementById("customModal");
+
+    openBtn.addEventListener("click", () => {
+      modal.classList.add("active");
+    });
+
+    // قفل عند الضغط بره البوكس
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+  </script>
     <script>
       const scrollTopBtn = document.getElementById("scrollTopBtn");
 
@@ -571,62 +609,71 @@
         });
       });
     </script>
-<script>
-  const input = document.getElementById("searchInput");
-  const saveBtn = document.getElementById("saveBtn");
-  const clearBtn = document.getElementById("clearBtn");
-  const ayahDiv = document.getElementById("ayah");
-  const message = document.getElementById("message");
+  <script>
+    const input = document.getElementById("searchInput");
+    const saveBtn = document.getElementById("saveBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const ayahDiv = document.getElementById("ayah");
+    const message = document.getElementById("message");
 
-  // 🔑 مفتاح خاص بكل صفحة
-  const pageKey = "highlightedNumber_" + window.location.pathname;
+    // 🔑 مفتاح خاص بكل صفحة
+    const pageKey = "highlightedNumber_" + window.location.pathname;
 
-  function highlightNumber(num) {
-    let text = ayahDiv.textContent;
-    let found = false;
+    function highlightNumber(num) {
+      let text = ayahDiv.textContent;
+      let found = false;
 
-    ayahDiv.innerHTML = text.replace(/\(\d+\)/g, (match) => {
-      let number = match.replace(/[()]/g, "");
-      if (number == num) {
-        found = true;
-        return `<span class="highlight">(${number})</span>`;
+      ayahDiv.innerHTML = text.replace(/\(\d+\)/g, (match) => {
+        let number = match.replace(/[()]/g, "");
+        if (number == num) {
+          found = true;
+          return `<span class="highlight">(${number})</span>`;
+        }
+        return `(${number})`;
+      });
+
+      return found;
+    }
+    saveBtn.addEventListener("click", function () {
+      setTimeout(function () {
+        location.reload();
+      }, 750);
+    });
+    clearBtn.addEventListener("click", function () {
+      setTimeout(function () {
+        location.reload();
+      }, 750);
+    });
+    saveBtn.addEventListener("click", () => {
+      let value = input.value.trim();
+
+      if (value) {
+        let found = highlightNumber(value);
+
+        if (found) {
+          localStorage.setItem(pageKey, value);
+          message.textContent = "";
+        } else {
+          message.textContent = `لا يوجد رقم (${value})`;
+          localStorage.removeItem(pageKey);
+        }
       }
-      return `(${number})`;
     });
 
-    return found;
-  }
+    clearBtn.addEventListener("click", () => {
+      localStorage.removeItem(pageKey);
+      ayahDiv.innerHTML = ayahDiv.textContent;
+      message.textContent = "";
+      input.value = "";
+    });
 
-  saveBtn.addEventListener("click", () => {
-    let value = input.value.trim();
-
-    if (value) {
-      let found = highlightNumber(value);
-
-      if (found) {
-        localStorage.setItem(pageKey, value);
-        message.textContent = "";
-      } else {
-        message.textContent = `لا يوجد رقم (${value})`;
-        localStorage.removeItem(pageKey);
+    window.addEventListener("DOMContentLoaded", () => {
+      let savedNum = localStorage.getItem(pageKey);
+      if (savedNum) {
+        highlightNumber(savedNum);
       }
-    }
-  });
-
-  clearBtn.addEventListener("click", () => {
-    localStorage.removeItem(pageKey);
-    ayahDiv.innerHTML = ayahDiv.textContent;
-    message.textContent = "";
-    input.value = "";
-  });
-
-  window.addEventListener("DOMContentLoaded", () => {
-    let savedNum = localStorage.getItem(pageKey);
-    if (savedNum) {
-      highlightNumber(savedNum);
-    }
-  });
-</script>
+    });
+  </script>
     <script src="../js/jquery-3.7.0.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/all.min.js"></script>

@@ -2580,8 +2580,23 @@
       </div>
     </div>
     <button id="scrollTopBtn" title="العودة للأعلى">
-      <i class="fa-solid fa-angle-up"></i>
-    </button>
+    <i class="fa-solid fa-angle-up"></i>
+  </button>
+  <script>
+    const openBtn = document.getElementById("openModalBtn");
+    const modal = document.getElementById("customModal");
+
+    openBtn.addEventListener("click", () => {
+      modal.classList.add("active");
+    });
+
+    // قفل عند الضغط بره البوكس
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+  </script>
     <script>
       const offlineOverlay = document.getElementById("offlineOverlay");
       const offlineBox = document.getElementById("offlineBox");

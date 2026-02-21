@@ -1702,7 +1702,7 @@ button.zekr-btn:hover {
   position: fixed;
   bottom: 25px;
   left: 25px;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .share-main {
@@ -1769,6 +1769,58 @@ button.zekr-btn:hover {
 
 .telegram {
   background: #0088cc;
+}
+.share-box.select {
+    bottom: 95px;
+}
+
+
+
+
+/* الخلفية */
+.overlay-blur {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+/* لما تفتح */
+.overlay-blur.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* البوكس الداخلي */
+.modal-content-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  transform: scale(0.8);
+  transition: 0.4s ease;
+}
+
+.overlay-blur.active .modal-content-box {
+  transform: scale(1);
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
 }
 
 
