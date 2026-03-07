@@ -1842,7 +1842,7 @@ button.zekr-btn:hover {
   max-height: 80vh;
   border-radius: 16px;
   padding: 20px;
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .fav-title {
@@ -1984,6 +1984,7 @@ button.zekr-btn:hover {
     background: #f0f0f0;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 #zekrInput{
     width: 100%;
